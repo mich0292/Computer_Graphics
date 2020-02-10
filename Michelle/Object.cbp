@@ -44,8 +44,8 @@
 		</Linker>
 		<Unit filename="CGLabmain.cpp" />
 		<Unit filename="CGLabmain.hpp" />
-		<Unit filename="model.cpp" />
-		<Unit filename="model.hpp" />
+		<Unit filename="satellite.cpp" />
+		<Unit filename="satellite.hpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />

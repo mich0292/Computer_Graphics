@@ -1,7 +1,7 @@
 #ifndef SATELLITE_HPP
 #define SATELLITE_HPP
 #include "CGLabmain.hpp"
-namespace model
+namespace satellite
 {
 class Satellite
 {
@@ -14,6 +14,9 @@ public:
     void drawTopStem();
     void drawBottom();
     void drawBody();
+    void drawTopBody();
+    void drawBottomBody();
+    void drawCube(float color[]);
 
 private:
     GLUquadricObj *pObj;
@@ -30,6 +33,7 @@ public:
         //satellite.drawTopStem(); // IGNORE!! only for drawTop()
         //satellite.drawWing();
         //satellite.drawBody();
+        satellite.draw();
     }
 
     init() {;}

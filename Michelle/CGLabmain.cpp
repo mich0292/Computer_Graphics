@@ -77,7 +77,7 @@
 //#include "CGLab05.hpp"
 //#include "CGLab06.hpp"
 //#include "CGLab07.hpp"
-#include "model.hpp"
+#include "satellite.hpp"
 //#include "CGLab09.hpp"
 //#include "CGLab10.hpp"
 //#include "CGLab11.hpp"
@@ -85,7 +85,7 @@
 //IMPORTANT:
 //  Change the namespace scope below corresponding to
 //  to the lab number which you wish to use.
-using model::MyVirtualWorld;
+using satellite::MyVirtualWorld;
 
 MyVirtualWorld myvirtualworld;
 
