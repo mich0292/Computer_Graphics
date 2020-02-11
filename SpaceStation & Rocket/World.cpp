@@ -16,8 +16,8 @@ void Planet::draw(){
     glColor3f(0.586f, 0.293f, 0.0f);
 
     glPushMatrix();
-    glTranslatef(0.0f, -20.0f, 15.0f);
-    gluSphere(pObj, 20.0, 26, 13);
+    glTranslatef(0.0f, -60.0f, 15.0f);
+    gluSphere(pObj, 60.0, 26, 13);
     glPopMatrix();
 
     glEnable(GL_CULL_FACE);
@@ -34,8 +34,12 @@ SpaceStation::~SpaceStation(){
 }
 
 void SpaceStation::draw(){
+    glPushMatrix();
+    glRotatef(-45.0, 0.0f, 1.0f, 0.0f);
+    glTranslatef(0.0f, 0.0f, -60.0f);
     drawBody();
     drawSolarPanel();
+    glPopMatrix();
 }
 
 void SpaceStation::drawSolarPanel(){
@@ -316,9 +320,12 @@ Rocket::~Rocket(){
 }
 
 void Rocket::draw(){
+    glPushMatrix();
+    glTranslatef(-12.0f, 3.5f, 20.0f);
     drawTop();
     drawBody();
     drawBottom();
+    glPopMatrix();
 }
 
 void Rocket::drawTop(){

@@ -49,8 +49,8 @@ public:
 
     void draw()
     {
-        //station.draw();
-        //rocket.draw();
+        station.draw();
+        rocket.draw();
         planet.draw();
     }
 
