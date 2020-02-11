@@ -277,7 +277,7 @@
 1581336208 d:\computergraphics\michelle\satellite.hpp
 	"CGLabmain.hpp"
 
-1581332752 source:d:\computergraphics\michelle\satellite.cpp
+1581336813 source:d:\computergraphics\michelle\satellite.cpp
 	<GL/glut.h>
 	"satellite.hpp"
 
