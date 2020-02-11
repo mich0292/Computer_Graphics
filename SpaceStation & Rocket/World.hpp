@@ -3,6 +3,16 @@
 #include "main.hpp"
 namespace World{
 
+class Planet{
+private:
+    GLUquadricObj *pObj;
+
+public:
+    Planet();
+    ~Planet();
+    void draw();
+};
+
 class SpaceStation{
 private:
     GLUquadricObj *pObj;
@@ -28,19 +38,20 @@ public:
     void drawBody();
     void drawBottom();
 };
-//------------------------------------
-//the main program will call methods from this class
+
 class MyVirtualWorld
 {
 public:
     long int timeold, timenew, elapseTime;
     Rocket rocket;
     SpaceStation station;
+    Planet planet;
 
     void draw()
     {
-        station.draw();
+        //station.draw();
         //rocket.draw();
+        planet.draw();
     }
 
     void tickTime(){
