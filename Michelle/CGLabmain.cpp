@@ -97,8 +97,29 @@ MyViewer   viewer;
 MySetting  setting;
 MyAxis     worldaxis;
 
-/* Terrain */
-TerTerrain *terrain = NULL;
+//-----------------------------------------------------------------------------
+// function prototypes
+//-----------------------------------------------------------------------------
+
+struct GeImageData;
+bool ge_read_image( const char * filename, GeImageData * pImgData );
+unsigned * ge_read_rgb( const char * name, int * width,
+                        int * height, int * comp );
+
+//-----------------------------------------------------------------------------
+// Name: struct GeImageData
+// Desc: holds basic image data
+//-----------------------------------------------------------------------------
+struct GeImageData
+{
+    int width;
+    int height;
+    unsigned * bits;
+
+    GeImageData( int w = 0, int h = 0, unsigned * p = 0 )
+        : width( w ), height( h ), bits( p )
+    { }
+};
 
 void myDisplayFunc(void)
 {
@@ -348,6 +369,7 @@ void myInit()
  myLightingInit();
 
  myvirtualworld.init();
+
 }
 
 void myWelcome()
@@ -370,47 +392,6 @@ void myWelcome()
  cout << "*****************************************************************\n";
 }
 
-static void
-load_models()
-{
-   /* Terrain */
-   terrain =
-      ter_terrain_new(TER_TERRAIN_VX, TER_TERRAIN_VZ, TER_TERRAIN_TILE_SIZE);
-   ter_terrain_set_heights_from_texture(terrain, TER_TEX_TERRAIN_HEIGHTMAP_01,
-                                        0.0f, 12.0f);
-   ter_terrain_build_mesh(terrain);
-   terrain->material.diffuse = glm::vec3(1.0f, 1.0f, 1.0f);
-   terrain->material.ambient = glm::vec3(1.0f, 1.0f, 1.0f);
-   terrain->material.specular = glm::vec3(0.15f, 0.15f, 0.15f);
-   terrain->material.shininess = 28.0f;
-
-   float tw = ter_terrain_get_width(terrain);
-   float td = ter_terrain_get_depth(terrain);
-
-   ter_cache_set("models/terrain", terrain);
-
-   /* Water */
-   TerTextureManager *texmgr =
-      (TerTextureManager *) ter_cache_get("textures/manager");
-   unsigned water_dudv_tex =
-      ter_texture_manager_get_tid(texmgr, TER_TEX_WATER_DUDV_01);
-   unsigned water_normal_tex =
-      ter_texture_manager_get_tid(texmgr, TER_TEX_WATER_NORMAL_01);
-   water = ter_water_tile_new(2.5f, -2.5f, tw + 2.5f, -td - 2.5f,
-                              TER_TERRAIN_WATER_HEIGHT,
-                              TER_TERRAIN_WATER_TILE_SIZE,
-                              water_dudv_tex, water_normal_tex);
-
-   ter_cache_set("water/water-tile-01", water);
-
-   /* OBJ models */
-   for (int i = 0; i < TER_OBJECT_TYPE_LAST; i++) {
-      TerModel *model = ter_model_load_obj(obj_model_list[i].path);
-      ter_cache_set(obj_model_list[i].key, model);
-   }
-
-   create_model_variants();
-}
 
 //--------------------------------------------------------------------
 int main(int argc, char **argv)

@@ -251,7 +251,7 @@
 	<GL/glut.h>
 	"model.hpp"
 
-1581324601 source:d:\computergraphics\michelle\cglabmain.cpp
+1581421243 source:d:\computergraphics\michelle\cglabmain.cpp
 	"CGLabxx.hpp"
 	<cstdlib>
 	<iostream>
@@ -274,10 +274,41 @@
 	<GL/glut.h>
 	"satellite.hpp"
 
-1581336208 d:\computergraphics\michelle\satellite.hpp
+1581423472 d:\computergraphics\michelle\satellite.hpp
 	"CGLabmain.hpp"
-
-1581336813 source:d:\computergraphics\michelle\satellite.cpp
 	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+
+1581423652 source:d:\computergraphics\michelle\satellite.cpp
 	"satellite.hpp"
+
+1581423704 source:d:\computergraphics\michelle\globe.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+
+1341006774 d:\codeblocks\mingw\include\memory.h
+	<string.h>
+
+1341006774 d:\codeblocks\mingw\include\math.h
+	<_mingw.h>
+
+1341006776 d:\codeblocks\mingw\include\stdio.h
+	<_mingw.h>
+	<stddef.h>
+	<stdarg.h>
+	<sys/types.h>
+
+1341006780 d:\codeblocks\mingw\include\sys\types.h
+	<_mingw.h>
+	<stddef.h>
 
