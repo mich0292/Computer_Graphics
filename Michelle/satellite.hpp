@@ -11,35 +11,35 @@
 
 namespace satellite
 {
+struct GeImageData
+{
+    int width;
+    int height;
+    unsigned * bits;
+
+    GeImageData( int w = 0, int h = 0, unsigned * p = 0 )
+        : width( w ), height( h ), bits( p )
+    { }
+};
+typedef struct _ImageRec
+{
+    unsigned short imagic;
+    unsigned short type;
+    unsigned short dim;
+    unsigned short xsize, ysize, zsize;
+    unsigned int min, max;
+    unsigned int wasteBytes;
+    char name[80];
+    unsigned long colorMap;
+    FILE *file;
+    unsigned char *tmp, *tmpR, *tmpG, *tmpB;
+    unsigned long rleEnd;
+    unsigned int *rowStart;
+    int *rowSize;
+} ImageRec;
 class Globe
 {
 public:
-    struct GeImageData
-    {
-        int width;
-        int height;
-        unsigned * bits;
-
-        GeImageData( int w = 0, int h = 0, unsigned * p = 0 )
-            : width( w ), height( h ), bits( p )
-        { }
-    };
-    typedef struct _ImageRec
-    {
-        unsigned short imagic;
-        unsigned short type;
-        unsigned short dim;
-        unsigned short xsize, ysize, zsize;
-        unsigned int min, max;
-        unsigned int wasteBytes;
-        char name[80];
-        unsigned long colorMap;
-        FILE *file;
-        unsigned char *tmp, *tmpR, *tmpG, *tmpB;
-        unsigned long rleEnd;
-        unsigned int *rowStart;
-        int *rowSize;
-    } ImageRec;
     Globe();
     ~Globe();
     void draw();

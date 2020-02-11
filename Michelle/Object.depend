@@ -251,7 +251,7 @@
 	<GL/glut.h>
 	"model.hpp"
 
-1581421243 source:d:\computergraphics\michelle\cglabmain.cpp
+1581441702 source:d:\computergraphics\michelle\cglabmain.cpp
 	"CGLabxx.hpp"
 	<cstdlib>
 	<iostream>
@@ -274,7 +274,7 @@
 	<GL/glut.h>
 	"satellite.hpp"
 
-1581423472 d:\computergraphics\michelle\satellite.hpp
+1581441864 d:\computergraphics\michelle\satellite.hpp
 	"CGLabmain.hpp"
 	<GL/glut.h>
 	<GL/glu.h>
@@ -284,7 +284,7 @@
 	<stdio.h>
 	<string.h>
 
-1581423652 source:d:\computergraphics\michelle\satellite.cpp
+1581441486 source:d:\computergraphics\michelle\satellite.cpp
 	"satellite.hpp"
 
 1581423704 source:d:\computergraphics\michelle\globe.cpp

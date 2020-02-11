@@ -2,57 +2,10 @@
 using namespace satellite;
 
 Globe::Globe(){
-    // set the GL clear color - use when the color buffer is cleared
-    glClearColor( 0.0f, 0.0f,0.0f, 0 );
-    // set the shading model to 'smooth'
-    glShadeModel( GL_SMOOTH );
-
-    // enable depth
-    glEnable( GL_DEPTH_TEST );
-    // set the front faces of polygons
-    glFrontFace( GL_CCW );
-    // cull faces
-    glEnable( GL_CULL_FACE );
-
-    // set the initial line width
-    glLineWidth( 1.0f );
-
-    // enable lighting
-    glEnable( GL_LIGHTING );
-    // enable lighting for front
-    glLightModeli( GL_FRONT, GL_TRUE );
-    // material have diffuse and ambient lighting
-    glColorMaterial( GL_FRONT, GL_AMBIENT_AND_DIFFUSE );
-    // enable color
-    glEnable( GL_COLOR_MATERIAL );
-    // enable light 0
-    glEnable( GL_LIGHT0 );
-
     // initialize our sphere
     g_sphere = gluNewQuadric( );
     gluQuadricNormals( g_sphere, ( GLenum )GLU_SMOOTH );
     gluQuadricTexture( g_sphere, GL_TRUE );
-
-    // set texture state
-    glPixelStorei( GL_UNPACK_ALIGNMENT, 4 );
-    glTexEnvi( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE );
-    glHint( GL_PERSPECTIVE_CORRECTION_HINT, GL_NICEST );
-
-    // read the texture
-    if( !ge_read_image( g_filename, &g_imgData ) )
-    {
-        printf( "couldn't open file '%s'...\n", g_filename );
-        printf( "usage: globe <filename>.rgb\n" );
-        exit(1);
-    }
-
-    // generate OpenGL texture
-    glGenTextures( 1, &g_img );
-    glBindTexture( GL_TEXTURE_2D, g_img );
-    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR );
-    glTexParameteri( GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR );
-
-    glTexImage2D( GL_TEXTURE_2D, 0, GL_RGBA, g_imgData.width, g_imgData.height, 0, GL_RGBA, GL_UNSIGNED_BYTE, g_imgData.bits );
 }
 
 Globe::~Globe()
