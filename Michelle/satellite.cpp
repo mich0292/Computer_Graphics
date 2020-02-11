@@ -14,7 +14,28 @@ Satellite::~Satellite()
     gluDeleteQuadric(pObj);
 }
 
+void Satellite::tickTime(long int elapsedTime){
+    bool reachEnd = false;
+    if (reachEnd) {
+        angle -= 0.1f;
+    }
+    else { angle = angle + 0.1f;}
+
+
+    if (angle < -90.0f || angle > 90.0f ){
+        reachEnd = true;
+    }
+
+}
+
 void Satellite::draw(){
+    glPushMatrix();
+        glRotatef(angle, 0.5f, 0.2f, 0.5f);
+        build();
+    glPopMatrix();
+}
+
+void Satellite::build(){
     //drawTop, drawWing x 2, drawBody, drawBottom
     glPushMatrix();
         glTranslatef(0.0f, 8.5f, 0.0f);
@@ -107,7 +128,19 @@ void Satellite::drawTop(){
         glPushMatrix();
             glRotatef(i*120, 0.0f, 1.0f, 0.0f);
             glTranslatef(0.0f, 4.1f, 0.7f);
-            drawTopStem();
+                glColor3f(0.2f, 0.2f, 0.2f);
+            glPushMatrix();
+                glTranslatef(0.0f, 4.5f, 0.0f);
+                glRotatef(15, 0.0f, 1.0f, 0.0f);
+                glRotatef(45, 1.0f, 0.0f, 0.0f);
+                gluCylinder(pObj, 0.1f, 0.1f, 7.5f, 24, 12);
+            glPopMatrix();
+            glPushMatrix();
+                glTranslatef(0.0f, 4.5f, 0.0f);
+                glRotatef(-15, 0.0f, 1.0f, 0.0f);
+                glRotatef(45, 1.0f, 0.0f, 0.0f);
+                gluCylinder(pObj, 0.1f, 0.1f, 7.5f, 24, 12);
+            glPopMatrix();
         glPopMatrix();
     }
     //Top disk
@@ -125,22 +158,6 @@ void Satellite::drawTop(){
         gluCylinder(pObj, 0.7f, 0.0f, 0.8f, 24, 12);
     glPopMatrix();
     glEnable(GL_CULL_FACE);
-}
-
-void Satellite::drawTopStem(){
-    glColor3f(0.2f, 0.2f, 0.2f);
-    glPushMatrix();
-        glTranslatef(0.0f, 4.5f, 0.0f);
-        glRotatef(15, 0.0f, 1.0f, 0.0f);
-        glRotatef(45, 1.0f, 0.0f, 0.0f);
-        gluCylinder(pObj, 0.1f, 0.1f, 7.5f, 24, 12);
-    glPopMatrix();
-    glPushMatrix();
-        glTranslatef(0.0f, 4.5f, 0.0f);
-        glRotatef(-15, 0.0f, 1.0f, 0.0f);
-        glRotatef(45, 1.0f, 0.0f, 0.0f);
-        gluCylinder(pObj, 0.1f, 0.1f, 7.5f, 24, 12);
-    glPopMatrix();
 }
 
 void Satellite::drawBottom(){
