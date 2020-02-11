@@ -20,6 +20,7 @@ void SpaceStation::draw(){
 
 void SpaceStation::drawSolarPanel(){
     glDisable(GL_CULL_FACE);
+    glColor3f(0.0f, 0.0f, 1.0f);
     //left solar panel
     glPushMatrix();
     glRotatef(angle, 0.0, 0.0, 1.0);
@@ -106,10 +107,10 @@ void SpaceStation::drawSolarPanel(){
 
 void SpaceStation::drawBody(){
     glDisable(GL_CULL_FACE);
-    glColor3f(1.0, 1.0, 1.0);
 
     //-----------------------stick link to solar panel (left)---------------------------------
     glPushMatrix();
+    glColor3f(0.2f, 0.2f, 0.2f);
     glRotatef(angle, 0.0, 0.0, 1.0);
     glTranslatef(0.0f, 0.5f, 24.0f);
     glRotatef(45.0, 1.0, 0.0, 0.0);
@@ -130,6 +131,7 @@ void SpaceStation::drawBody(){
     gluCylinder(pObj, 0.3f, 0.3f, 3.0f, 26, 13);
     glPopMatrix();
 
+    glColor3f(1.0f, 1.0f, 1.0f);
     glPushMatrix();
     glRotatef(angle, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, 11.5f, 25.3f);
@@ -215,6 +217,7 @@ void SpaceStation::drawBody(){
 
     //-----------------------stick link to solar panel (right)---------------------------------
     glPushMatrix();
+    glColor3f(0.2f, 0.2f, 0.2f);
     glRotatef(angle, 0.0, 0.0, 1.0);
     glTranslatef(0.0f, 0.5f, -18.0f);
     glRotatef(45.0, 1.0, 0.0, 0.0);
@@ -235,6 +238,7 @@ void SpaceStation::drawBody(){
     gluCylinder(pObj, 0.3f, 0.3f, 3.0f, 26, 13);
     glPopMatrix();
 
+    glColor3f(1.0f, 1.0f, 1.0f);
     glPushMatrix();
     glRotatef(angle, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, 11.5f, -18.3f);
