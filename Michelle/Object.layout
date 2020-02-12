@@ -2,14 +2,9 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="satellite.hpp" open="1" top="1" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1024" topLine="91" />
-		</Cursor>
-	</File>
 	<File name="CGLabmain.hpp" open="1" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="509" topLine="33" />
+			<Cursor1 position="2643" topLine="185" />
 		</Cursor>
 	</File>
 	<File name="src\Lighting.cpp" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -17,12 +12,17 @@
 			<Cursor1 position="2059" topLine="50" />
 		</Cursor>
 	</File>
-	<File name="include\Lighting.hpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\rgbLoader.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="466" topLine="0" />
+			<Cursor1 position="544" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="satellite.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="satellite.hpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2474" topLine="91" />
+		</Cursor>
+	</File>
+	<File name="satellite.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="15474" topLine="497" />
 		</Cursor>
@@ -33,9 +33,14 @@
 			<Collapse line="51" />
 		</Folding>
 	</File>
-	<File name="CGLabmain.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="src\CGLab01.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="3869" topLine="110" />
+			<Cursor1 position="303" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="include\Lighting.hpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="466" topLine="6" />
 		</Cursor>
 	</File>
 	<File name="include\CGLab01.hpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -43,14 +48,9 @@
 			<Cursor1 position="464" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="src\CGLab01.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="CGLabmain.cpp" open="1" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="303" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="src\rgbLoader.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="544" topLine="0" />
+			<Cursor1 position="10377" topLine="317" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>
