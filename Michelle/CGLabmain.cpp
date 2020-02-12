@@ -326,13 +326,13 @@ void myWelcome()
     cout << "|   F2                      => toggle rendering of axes         |\n";
     cout << "|   F3                      => toggle lighting on / off         |\n";
     cout << "|   F4                      => toggle obj lighting on / off     |\n";
-    cout << "|   F5                      => toggle star lighting on / off    |\n";
+    cout << "|   F5                      => toggle star(y) lighting on / off |\n";
+    cout << "|   F6                      => toggle star(w) lighting on / off |\n";
     cout << "|                                                               |\n";
     cout << "| Mouse (Left Drag or Right Drag) => rotate world               |\n";
     cout << "|                                                               |\n";
     cout << "*****************************************************************\n";
-    cout << "|                      H A V E   F U N  !!!                     |\n";
-    cout << "*****************************************************************\n";
+
 }
 
 
