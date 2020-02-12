@@ -35,10 +35,12 @@ class MyModelLoader
     //load a model and scale it
     void load(string filename, float scale = 1.0, float color1 = 1.0f, float color2 = 0.8f, float color3 = 0.4f);
     void draw();
+    void tickTime(long int elapseTime);
  private:
     vector<GLfloat> vertices;
     vector<int> faces;
     GLuint stanforddragon; //for generating display list
+    GLfloat movement;
 };
 
 }; //end of namespace CGLab01

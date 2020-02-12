@@ -6,16 +6,6 @@
 #include <stdlib.h>
 namespace World{
 
-//class Planet{
-//private:
-//    GLUquadricObj *pObj;
-//
-//public:
-//    Planet();
-//    ~Planet();
-//    void draw();
-//};
-
 class SpaceStation{
 private:
     GLUquadricObj *pObj;
@@ -42,31 +32,5 @@ public:
     void drawBottom();
 };
 
-//class MyVirtualWorld
-//{
-//public:
-//    long int timeold, timenew, elapseTime;
-//    Rocket rocket;
-//    SpaceStation station;
-////    Planet planet;
-//
-//    void draw()
-//    {
-//        station.draw();
-//        rocket.draw();
-//        planet.draw();
-//    }
-//
-//    void tickTime(){
-//        timenew = glutGet(GLUT_ELAPSED_TIME);
-//        elapseTime = timenew - timeold;
-//        timeold = timenew;
-//        station.tickTime(elapseTime);
-//    }
-//
-//    void init(){
-//        timeold = glutGet(GLUT_ELAPSED_TIME);
-//    }
-//};
 };
 #endif

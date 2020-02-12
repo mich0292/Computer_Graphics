@@ -108,6 +108,11 @@ void MyModelLoader::load(string filename, float scale, float color1, float color
 void MyModelLoader::draw()
 {
     glDisable(GL_CULL_FACE);
-    glCallList(stanforddragon);
+        glTranslatef(0.0f, movement, 0.0f);
+        glCallList(stanforddragon);
     glEnable(GL_CULL_FACE);
+}
+
+void MyModelLoader::tickTime(long int elapsedTime){
+    movement = movement + 0.05;
 }

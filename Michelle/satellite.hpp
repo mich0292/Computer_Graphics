@@ -34,7 +34,7 @@ private:
 
     GLfloat g_angle_x = 27.0f;
     GLfloat g_inc = 0.0f;
-    char g_filename[128] = "data/map.rgb";
+    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/map.rgb";
 
     // light position
     GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
@@ -58,7 +58,7 @@ private:
 
     GLfloat g_angle_x = 27.0f;
     GLfloat g_inc = 0.0f;
-    char g_filename[128] = "data/planet.rgb";
+    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/planet.rgb";
 
     // light position
     GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
@@ -111,6 +111,8 @@ public:
         elapseTime = timenew - timeold;
         timeold = timenew;
         satellite.tickTime(elapseTime);
+        station.tickTime(elapseTime);
+        prometheusloader.tickTime(elapseTime);
     }
 
     void init()
@@ -118,8 +120,10 @@ public:
         timeold = glutGet(GLUT_ELAPSED_TIME);
         globe.init();
         planet.init();
-        prometheusloader.load("D:/CG LABBBBBB/Michelle/data/Prometheus.txt", 2 );
-        capsuleloader.load("D:/CG LABBBBBB/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
+        //prometheusloader.load("D:/CG LABBBBBB/Michelle/data/Prometheus.txt", 2 );
+        prometheusloader.load("D:/ComputerGraphics/Michelle/data/Prometheus.txt", 2 );
+        //capsuleloader.load("D:/CG LABBBBBB/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
+        capsuleloader.load("D:/ComputerGraphics/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
         yellowStar.init();
         whiteStar.init();
         setupLights();

@@ -306,6 +306,7 @@ void Satellite::drawTop()
     glDisable(GL_CULL_FACE);
     //Big fan
     glPushMatrix();
+    glColor3f(0.0f, 0.0f, 1.0f);
     glRotatef(-90, 1.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 1.0f, 7.0f, 4.0f, 24, 12);
     glPopMatrix();
@@ -500,7 +501,7 @@ void MyVirtualWorld::draw()
 {
     ///Satellite
     glPushMatrix();
-        glTranslatef(14.0f, 9.0f, -0.0f);
+        glTranslatef(16.0f, 9.0f, -8.0f);
         glRotatef(50, 0.0f, 0.0f, 1.0f);
         glScalef(0.4f, 0.4f, 0.4f);
         satellite.draw();
@@ -526,14 +527,24 @@ void MyVirtualWorld::draw()
     glPopMatrix();
     ///Prometheus
     glPushMatrix();
-        glTranslatef(15.0f, 4.0f, -10.0f);
+        glTranslatef(15.0f, 35.0f, -25.0f);
         glRotatef(90, 0.0f, 1.0f, 0.0f);
         glRotatef(-90, 1.0f, 0.0f, 0.0f);
         prometheusloader.draw();
     glPopMatrix();
-
-    station.draw();
-    rocket.draw();
+    ///Station
+    glPushMatrix();
+        glTranslatef(-80.0f, -10.0f, 20.0f);
+        glScalef(0.4f, 0.4f, 0.4f);
+        station.draw();
+    glPopMatrix();
+    ///Rocket
+     glPushMatrix();
+        glRotatef(-10, 0.0f, 0.0f, 1.0f);
+        glTranslatef(20.0f, 0.0f, 8.0f);
+        glScalef(0.5f, 0.5f, 0.5f);
+        rocket.draw();
+    glPopMatrix();
     ///LIGHTS
     glPushMatrix();
         yellowStar.draw();

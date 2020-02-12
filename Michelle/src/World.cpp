@@ -2,27 +2,6 @@
 #include "../include/World.hpp"
 using namespace World;
 
-//Planet::Planet(){
-//    pObj = gluNewQuadric();
-//    gluQuadricNormals(pObj,GLU_SMOOTH);
-//}
-//
-//Planet::~Planet(){
-//    gluDeleteQuadric(pObj);
-//}
-//
-//void Planet::draw(){
-//    glDisable(GL_CULL_FACE);
-//    glColor3f(0.586f, 0.293f, 0.0f);
-//
-//    glPushMatrix();
-//    glTranslatef(0.0f, -60.0f, 15.0f);
-//    gluSphere(pObj, 60.0, 26, 13);
-//    glPopMatrix();
-//
-//    glEnable(GL_CULL_FACE);
-//}
-
 SpaceStation::SpaceStation(){
     pObj = gluNewQuadric();
     gluQuadricNormals(pObj,GLU_SMOOTH);
