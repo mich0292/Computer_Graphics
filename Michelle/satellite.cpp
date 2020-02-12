@@ -532,6 +532,10 @@ void MyVirtualWorld::draw()
         glRotatef(-90, 1.0f, 0.0f, 0.0f);
         prometheusloader.draw();
     glPopMatrix();
+    ///Satellite Model
+    glPushMatrix();
+        satelliteloader.draw();
+    glPopMatrix();
     ///Station
     glPushMatrix();
         glTranslatef(-80.0f, -10.0f, 20.0f);

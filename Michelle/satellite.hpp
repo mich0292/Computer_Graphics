@@ -93,6 +93,7 @@ class MyVirtualWorld
     Satellite satellite;
     MyModelLoader prometheusloader;
     MyModelLoader capsuleloader;
+    MyModelLoader satelliteloader;
     YellowStar yellowStar;
     WhiteStar whiteStar;
     Globe globe;
@@ -124,6 +125,7 @@ public:
         prometheusloader.load("D:/ComputerGraphics/Michelle/data/Prometheus.txt", 2 );
         //capsuleloader.load("D:/CG LABBBBBB/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
         capsuleloader.load("D:/ComputerGraphics/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
+        satelliteloader.load("D/ComputerGraphics/Michelle/data/satelliteModel.txt", 0.5);
         yellowStar.init();
         whiteStar.init();
         setupLights();
