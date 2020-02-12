@@ -532,6 +532,8 @@ void MyVirtualWorld::draw()
         prometheusloader.draw();
     glPopMatrix();
 
+    station.draw();
+    rocket.draw();
     ///LIGHTS
     glPushMatrix();
         yellowStar.draw();
@@ -563,6 +565,7 @@ void MyVirtualWorld::setupLights()
     //define the color of light, i.e. LIGHT0
     GLfloat mycolor[] = { 0.50, 0.50, 0.50};
     glLightfv(GL_LIGHT0, GL_DIFFUSE, mycolor);
+    //enable the light, i.e. LIGHT0
     //enable the light, i.e. LIGHT0
     glEnable(GL_LIGHT0);
     yellowStar.setupLights();

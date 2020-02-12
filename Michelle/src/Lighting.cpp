@@ -62,7 +62,7 @@ void YellowStar::draw()
 }
 
 void WhiteStar::init(){
-    starLoader.load("D:/CG LABBBBBB/Michelle/data/star.txt", 0.05);
+    starLoader.load("C:/Users/asus/Google Drive (foofangjee@gmail.com)/Semester 2/TGD2151/Assignment/GitHub/ComputerGraphics/Michelle/data/star.txt", 0.05);
 }
 void WhiteStar::setupLights()
 {
