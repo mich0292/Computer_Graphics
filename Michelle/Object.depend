@@ -273,7 +273,7 @@
 	<GL/glut.h>
 	"satellite.hpp"
 
-1581521305 d:\computergraphics\michelle\satellite.hpp
+1581524979 d:\computergraphics\michelle\satellite.hpp
 	<GL/glut.h>
 	<GL/glu.h>
 	<stdlib.h>
@@ -283,7 +283,7 @@
 	"include/Lighting.hpp"
 	"include/World.hpp"
 
-1581519440 source:d:\computergraphics\michelle\satellite.cpp
+1581524721 source:d:\computergraphics\michelle\satellite.cpp
 	"satellite.hpp"
 
 1581423704 source:d:\computergraphics\michelle\globe.cpp
@@ -432,7 +432,7 @@
 
 1581456534 d:\computergraphics\michelle\include\rgbloader.hpp
 
-1581519025 d:\computergraphics\michelle\include\cglab01.hpp
+1581524704 d:\computergraphics\michelle\include\cglab01.hpp
 	"../CGLabmain.hpp"
 	<string>
 	<vector>
@@ -442,7 +442,7 @@
 	"../CGLabmain.hpp"
 	"CGLab01.hpp"
 
-1581519488 source:d:\computergraphics\michelle\src\cglab01.cpp
+1581524697 source:d:\computergraphics\michelle\src\cglab01.cpp
 	<GL/glut.h>
 	<string>
 	<fstream>
@@ -538,7 +538,7 @@
 	<GL/glu.h>
 	<stdlib.h>
 
-1581518324 source:d:\computergraphics\michelle\src\world.cpp
+1581525243 source:d:\computergraphics\michelle\src\world.cpp
 	<GL/glut.h>
 	"../include/World.hpp"
 

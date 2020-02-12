@@ -322,7 +322,7 @@ void Rocket::drawTop(){
 
 void Rocket::drawBody(){
     glDisable(GL_CULL_FACE);
-
+    glColor3f(0.955f, 0.637f, 0.538f);
     glPushMatrix();
     glTranslatef(0.0f,14.5f,0.0f);
     glRotatef(-90,1.0,0.0,0.0);

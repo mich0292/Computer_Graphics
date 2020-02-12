@@ -94,6 +94,7 @@ class MyVirtualWorld
     MyModelLoader prometheusloader;
     MyModelLoader capsuleloader;
     MyModelLoader satelliteloader;
+    MyModelLoader tyderiumloader;
     YellowStar yellowStar;
     WhiteStar whiteStar;
     Globe globe;
@@ -114,6 +115,8 @@ public:
         satellite.tickTime(elapseTime);
         station.tickTime(elapseTime);
         prometheusloader.tickTime(elapseTime);
+        satelliteloader.tickTime(elapseTime);
+        tyderiumloader.tickTime(elapseTime, 0.8f);
     }
 
     void init()
@@ -122,10 +125,11 @@ public:
         globe.init();
         planet.init();
         //prometheusloader.load("D:/CG LABBBBBB/Michelle/data/Prometheus.txt", 2 );
-        prometheusloader.load("D:/ComputerGraphics/Michelle/data/Prometheus.txt", 2 );
+        prometheusloader.load("D:/ComputerGraphics/Michelle/data/Prometheus.txt", 3 );
         //capsuleloader.load("D:/CG LABBBBBB/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
-        capsuleloader.load("D:/ComputerGraphics/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
-        satelliteloader.load("D/ComputerGraphics/Michelle/data/satelliteModel.txt", 0.5);
+        capsuleloader.load("D:/ComputerGraphics/Michelle/data/capsule.txt", 0.02, 0.560, 0.570, 0.580);
+        satelliteloader.load("D:/ComputerGraphics/Michelle/data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
+        tyderiumloader.load("D:/ComputerGraphics/Michelle/data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
         yellowStar.init();
         whiteStar.init();
         setupLights();

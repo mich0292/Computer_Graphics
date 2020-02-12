@@ -105,14 +105,26 @@ void MyModelLoader::load(string filename, float scale, float color1, float color
     glEndList();
 }
 
-void MyModelLoader::draw()
+void MyModelLoader::draw(float x, float y, float z, float angle, bool movingFlag)
 {
     glDisable(GL_CULL_FACE);
-        glTranslatef(0.0f, movement, 0.0f);
+        if (angle)
+            glRotatef(angle*movement, x, y, z);
+        if (!angle || movingFlag)
+            glTranslatef(x*movement, y*movement, z*movement);
         glCallList(stanforddragon);
     glEnable(GL_CULL_FACE);
 }
 
-void MyModelLoader::tickTime(long int elapsedTime){
-    movement = movement + 0.05;
+void MyModelLoader::tickTime(long int elapsedTime, float speed){
+    movement = movement + 0.05 + speed;
+}
+
+void MyModelLoader::setupLights(){
+    static GLfloat specref[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+    short shininess = 80;
+
+    glEnable(GL_COLOR_MATERIAL);
+    glMaterialfv(GL_FRONT, GL_SPECULAR, specref);
+    glMateriali(GL_FRONT, GL_SHININESS, shininess);
 }

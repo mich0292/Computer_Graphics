@@ -513,11 +513,12 @@ void MyVirtualWorld::draw()
         glRotatef(-90, 1.0f, 0.0f, 0.0f);
         capsuleloader.draw();
     glPopMatrix();
-    ///Globe
-    glPushMatrix();
-        glTranslatef(-50.0f, 20.0f, -40.0f);
-        glScalef(8.0f, 8.f, 8.0f);
-        globe.draw();
+    ///Rocket
+     glPushMatrix();
+        glRotatef(-10, 0.0f, 0.0f, 1.0f);
+        glTranslatef(20.0f, 0.0f, 8.0f);
+        glScalef(0.5f, 0.5f, 0.5f);
+        rocket.draw();
     glPopMatrix();
     ///Planet
     glPushMatrix();
@@ -525,16 +526,23 @@ void MyVirtualWorld::draw()
         glScalef(22.0f, 22.0f, 22.0f);
         planet.draw();
     glPopMatrix();
-    ///Prometheus
+    ///Globe
     glPushMatrix();
-        glTranslatef(15.0f, 35.0f, -25.0f);
-        glRotatef(90, 0.0f, 1.0f, 0.0f);
-        glRotatef(-90, 1.0f, 0.0f, 0.0f);
-        prometheusloader.draw();
+        glTranslatef(-60.0f, 20.0f, -50.0f);
+        glScalef(8.0f, 8.f, 8.0f);
+        globe.draw();
     glPopMatrix();
     ///Satellite Model
     glPushMatrix();
-        satelliteloader.draw();
+        glTranslatef(-45.0f, 20.0f, -50.0f);
+        satelliteloader.draw(1, 0, 0, 5);
+    glPopMatrix();
+    ///Prometheus
+    glPushMatrix();
+        glTranslatef(35.0f, 40.0f, -35.0f);
+        glRotatef(90, 0.0f, 1.0f, 0.0f);
+        glRotatef(-90, 1.0f, 0.0f, 0.0f);
+        prometheusloader.draw(0, 1, 0, 0);
     glPopMatrix();
     ///Station
     glPushMatrix();
@@ -542,12 +550,11 @@ void MyVirtualWorld::draw()
         glScalef(0.4f, 0.4f, 0.4f);
         station.draw();
     glPopMatrix();
-    ///Rocket
-     glPushMatrix();
-        glRotatef(-10, 0.0f, 0.0f, 1.0f);
-        glTranslatef(20.0f, 0.0f, 8.0f);
-        glScalef(0.5f, 0.5f, 0.5f);
-        rocket.draw();
+    ///Tyderium (ship)
+    glPushMatrix();
+        glTranslatef(-20.0f, 4.0f, -250.0f);
+        glRotatef(-90, 1.0f, 0.0f, 0.0f);
+        tyderiumloader.draw(0, -1, 0, 0);
     glPopMatrix();
     ///LIGHTS
     glPushMatrix();
@@ -580,12 +587,14 @@ void MyVirtualWorld::setupLights()
     //define the color of light, i.e. LIGHT0
     GLfloat mycolor[] = { 0.50, 0.50, 0.50};
     glLightfv(GL_LIGHT0, GL_DIFFUSE, mycolor);
-    //enable the light, i.e. LIGHT0
+
     //enable the light, i.e. LIGHT0
     glEnable(GL_LIGHT0);
     yellowStar.setupLights();
     whiteStar.setupLights();
-
+    capsuleloader.setupLights();
+    prometheusloader.setupLights();
+    satelliteloader.setupLights();
     for (int i=0; i<6; ++i)
         lighton[i] = true;
 }

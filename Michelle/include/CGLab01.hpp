@@ -33,9 +33,10 @@ class MyModelLoader
     {
     }
     //load a model and scale it
-    void load(string filename, float scale = 1.0, float color1 = 1.0f, float color2 = 0.8f, float color3 = 0.4f);
-    void draw();
-    void tickTime(long int elapseTime);
+    void load(string filename, float scale = 1.0f, float color1 = 1.0f, float color2 = 0.8f, float color3 = 0.4f);
+    void draw(float x = 0.0f, float y = 0.0f, float z = 0.0f, float angle = 0, bool movingFlag = FALSE);
+    void tickTime(long int elapseTime, float speed = 0.0f);
+    void setupLights();
  private:
     vector<GLfloat> vertices;
     vector<int> faces;
