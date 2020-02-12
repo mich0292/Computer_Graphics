@@ -11,7 +11,8 @@
 namespace satellite
 {
 using CGLab01::MyModelLoader;
-using Lighting::Star;
+using Lighting::YellowStar;
+using Lighting::WhiteStar;
 class Globe
 {
 public:
@@ -84,12 +85,13 @@ private:
 
 class MyVirtualWorld
 {
-    const int NUM_OF_STARS = 2;
+    const int NUM_OF_STARS = 1;
     long int timeold, timenew, elapseTime;
     Satellite satellite;
     MyModelLoader prometheusloader;
     MyModelLoader capsuleloader;
-    Star star[2];
+    YellowStar yellowStar;
+    WhiteStar whiteStar;
     Globe globe;
     Planet planet;
     bool lighton[7]; //keep track if lights are on or off
@@ -112,10 +114,8 @@ public:
         planet.init();
         prometheusloader.load("D:/CG LABBBBBB/Michelle/data/Prometheus.txt", 2 );
         capsuleloader.load("D:/CG LABBBBBB/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
-        for ( int i = 0; i < NUM_OF_STARS; i++)
-        {
-            star[i].init();
-        }
+        yellowStar.init();
+        whiteStar.init();
         setupLights();
     }
 };

@@ -312,7 +312,7 @@
 	<_mingw.h>
 	<stddef.h>
 
-1581497401 source:d:\cg labbbbbb\michelle\cglabmain.cpp
+1581503249 source:d:\cg labbbbbb\michelle\cglabmain.cpp
 	<cstdlib>
 	<iostream>
 	<iomanip>
@@ -327,7 +327,7 @@
 	<iostream>
 	<GL/glut.h>
 
-1581498184 d:\cg labbbbbb\michelle\satellite.hpp
+1581502674 d:\cg labbbbbb\michelle\satellite.hpp
 	<GL/glut.h>
 	<GL/glu.h>
 	<stdlib.h>
@@ -336,7 +336,7 @@
 	"include/CGLab01.hpp"
 	"include/Lighting.hpp"
 
-1581497744 source:d:\cg labbbbbb\michelle\satellite.cpp
+1581503485 source:d:\cg labbbbbb\michelle\satellite.cpp
 	"satellite.hpp"
 
 1581423704 source:d:\cg labbbbbb\michelle\globe.cpp
@@ -410,11 +410,11 @@
 
 1581456534 d:\cg labbbbbb\michelle\include\rgbloader.hpp
 
-1581498006 source:d:\cg labbbbbb\michelle\src\lighting.cpp
+1581503416 source:d:\cg labbbbbb\michelle\src\lighting.cpp
 	<GL/glut.h>
 	"../include/Lighting.hpp"
 
-1581498099 d:\cg labbbbbb\michelle\include\lighting.hpp
+1581502565 d:\cg labbbbbb\michelle\include\lighting.hpp
 	<cmath>
 	"../CGLabmain.hpp"
 	"CGLab01.hpp"

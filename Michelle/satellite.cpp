@@ -1,6 +1,9 @@
 #include "satellite.hpp"
 using namespace satellite;
 
+/******************************************************************************
+*************   	      		  Globe					    	  *************
+******************************************************************************/
 Globe::Globe()
 {
     // initialize our sphere
@@ -79,7 +82,9 @@ void Globe::draw()
     glFlush( );
     //glutSwapBuffers( );
 }
-
+/******************************************************************************
+*************   	      		  Planet				    	  *************
+******************************************************************************/
 Planet::Planet()
 {
     // initialize our sphere
@@ -107,7 +112,7 @@ void Planet::init()
         // enable color
         glEnable( GL_COLOR_MATERIAL );
         // enable light 0
-        glEnable( GL_LIGHT0 );
+        glEnable( GL_LIGHT1 );
     */
     // set texture state
     glPixelStorei( GL_UNPACK_ALIGNMENT, 4 );
@@ -172,6 +177,10 @@ void Planet::draw()
     //glutSwapBuffers( );
 }
 
+
+/******************************************************************************
+*************   	      		  Satellite				    	  *************
+******************************************************************************/
 Satellite::Satellite()
 {
     //Setup Quadric Object
@@ -484,78 +493,81 @@ void Satellite::drawCube(float color[3])
     glVertex3f( -0.5, -0.5, -0.5 );
     glEnd();
 }
-
+/******************************************************************************
+*************   	      	 MyVirtualWorld				    	  *************
+******************************************************************************/
 void MyVirtualWorld::draw()
 {
     ///Satellite
     glPushMatrix();
-    glTranslatef(14.0f, 9.0f, -0.0f);
-    glRotatef(50, 0.0f, 0.0f, 1.0f);
-    glScalef(0.4f, 0.4f, 0.4f);
-    satellite.draw();
+        glTranslatef(14.0f, 9.0f, -0.0f);
+        glRotatef(50, 0.0f, 0.0f, 1.0f);
+        glScalef(0.4f, 0.4f, 0.4f);
+        satellite.draw();
     glPopMatrix();
     ///Capsule
     glPushMatrix();
-    glTranslatef(6.0f, -0.9f, 25.0f);
-    //glRotatef(-5, 0.0f, 0.0f, 1.0f);
-    glRotatef(-90, 1.0f, 0.0f, 0.0f);
-    capsuleloader.draw();
+        glTranslatef(6.0f, -0.9f, 25.0f);
+        //glRotatef(-5, 0.0f, 0.0f, 1.0f);
+        glRotatef(-90, 1.0f, 0.0f, 0.0f);
+        capsuleloader.draw();
     glPopMatrix();
     ///Globe
     glPushMatrix();
-    glTranslatef(-50.0f, 20.0f, -40.0f);
-    glScalef(8.0f, 8.f, 8.0f);
-    globe.draw();
+        glTranslatef(-50.0f, 20.0f, -40.0f);
+        glScalef(8.0f, 8.f, 8.0f);
+        globe.draw();
     glPopMatrix();
     ///Planet
     glPushMatrix();
-    glTranslatef(7.0f, -30.0f, 20.0f);
-    glScalef(22.0f, 22.0f, 22.0f);
-    planet.draw();
+        glTranslatef(7.0f, -30.0f, 20.0f);
+        glScalef(22.0f, 22.0f, 22.0f);
+        planet.draw();
     glPopMatrix();
     ///Prometheus
     glPushMatrix();
-    glTranslatef(15.0f, 4.0f, -10.0f);
-    glRotatef(90, 0.0f, 1.0f, 0.0f);
-    glRotatef(-90, 1.0f, 0.0f, 0.0f);
-    prometheusloader.draw();
+        glTranslatef(15.0f, 4.0f, -10.0f);
+        glRotatef(90, 0.0f, 1.0f, 0.0f);
+        glRotatef(-90, 1.0f, 0.0f, 0.0f);
+        prometheusloader.draw();
     glPopMatrix();
 
     ///LIGHTS
     glPushMatrix();
-    for ( int i = 0; i < NUM_OF_STARS; i++){
-        glTranslatef(1.0f*i, 4.0f*i, -1.0f*i);
-        star[i].draw();
-    }
+        yellowStar.draw();
     glPopMatrix();
+    glPushMatrix();
+        whiteStar.draw();
+    glPopMatrix();
+
 }
 
 void MyVirtualWorld::setupLights()
 {
     glEnable(GL_LIGHTING);
-//GL_COLOR_MATERIAL
-// * relevant only if lighting is enabled
-// * disabled by default
-// * if enabled, glColor*(...) is in effect to change the color
-// tracked by glColorMaterial
-// (meaning that in our case here, glColor*(...) affect
-// the diffuse color of the frant face)
-// * if disbled, glMaterial*(...) is in effect to change the color
-// glColor*(...) will not work!
-//glColor*(...) always in effect if lighting is not enabled
+    //GL_COLOR_MATERIAL
+    // * relevant only if lighting is enabled
+    // * disabled by default
+    // * if enabled, glColor*(...) is in effect to change the color
+    // tracked by glColorMaterial
+    // (meaning that in our case here, glColor*(...) affect
+    // the diffuse color of the frant face)
+    // * if disbled, glMaterial*(...) is in effect to change the color
+    // glColor*(...) will not work!
+    //glColor*(...) always in effect if lighting is not enabled
     glColorMaterial(GL_FRONT, GL_DIFFUSE);
     glEnable(GL_COLOR_MATERIAL);
-//ensure unit vectors remain unit vectors after
-// modelview scaling
+    //ensure unit vectors remain unit vectors after
+    // modelview scaling
     glEnable(GL_NORMALIZE);
     //define the color of light, i.e. LIGHT0
-    GLfloat mycolor[] = { 0.15, 0.15, 0.15};
+    GLfloat mycolor[] = { 0.50, 0.50, 0.50};
     glLightfv(GL_LIGHT0, GL_DIFFUSE, mycolor);
     //enable the light, i.e. LIGHT0
     glEnable(GL_LIGHT0);
-    for ( int i = 0; i < NUM_OF_STARS; i++){
-        star[i].setupLights();
-    }
+    yellowStar.setupLights();
+    whiteStar.setupLights();
+
     for (int i=0; i<6; ++i)
         lighton[i] = true;
 }
@@ -570,15 +582,14 @@ void MyVirtualWorld::toggleLight(int lightno)
         else
             glDisable( GL_LIGHT0 );
     }
-    else if (lightno>=1 && lightno<=1)
+    else if (lightno==1)
     {
-        for ( int i = 0; i < NUM_OF_STARS; i++){
-            star[i].toggleLight(lightno-1);
-        }
+        yellowStar.toggleLight(lightno-1);
+
     }
-    else if (lightno>=4 && lightno<=5)
+    else if (lightno==2)
     {
-        //myswinglights.toggleLight(lightno-4);
+        whiteStar.toggleLight(lightno-2);
     }
         else if (lightno>=4 && lightno<=5)
     {

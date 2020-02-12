@@ -96,42 +96,48 @@ void mySpecialFunc(int key, int x, int y)
 {
     switch (key)
     {
-    case GLUT_KEY_DOWN  :
-        world.rotateX -= setting.angleInc;
-        break;
-    case GLUT_KEY_UP    :
-        world.rotateX += setting.angleInc;
-        break;
-    case GLUT_KEY_LEFT  :
-        world.rotateY -= setting.angleInc;
-        break;
-    case GLUT_KEY_RIGHT :
-        world.rotateY += setting.angleInc;
-        break;
-    case GLUT_KEY_HOME  :
-        myDataInit();
-        break;
-    case GLUT_KEY_F1    :
-        setting.shadingMode = !setting.shadingMode;
-        if (setting.shadingMode)
-            glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
-        else
-            glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-        break;
-    case GLUT_KEY_F2    :
-        worldaxis.toggle();
-        break;
-    case GLUT_KEY_F3    :
-        GLboolean lightingIsOn;
-        glGetBooleanv(GL_LIGHTING, &lightingIsOn);
-        if (lightingIsOn==GL_TRUE)
-            glDisable(GL_LIGHTING);
-        else
-            glEnable(GL_LIGHTING);
-        break;
-    case GLUT_KEY_F5 :
-        myvirtualworld.toggleLight(1);
-        break;
+        case GLUT_KEY_DOWN  :
+                                world.rotateX -= setting.angleInc;
+                                break;
+        case GLUT_KEY_UP    :
+                                world.rotateX += setting.angleInc;
+                                break;
+        case GLUT_KEY_LEFT  :
+                                world.rotateY -= setting.angleInc;
+                                break;
+        case GLUT_KEY_RIGHT :
+                                world.rotateY += setting.angleInc;
+                                break;
+        case GLUT_KEY_HOME  :
+                                myDataInit();
+                                break;
+        case GLUT_KEY_F1    :
+                                setting.shadingMode = !setting.shadingMode;
+                                if (setting.shadingMode)
+                                    glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
+                                else
+                                    glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+                                break;
+        case GLUT_KEY_F2    :
+                                worldaxis.toggle();
+                                break;
+        case GLUT_KEY_F3    :
+                                GLboolean lightingIsOn;
+                                glGetBooleanv(GL_LIGHTING, &lightingIsOn);
+                                if (lightingIsOn==GL_TRUE)
+                                    glDisable(GL_LIGHTING);
+                                else
+                                    glEnable(GL_LIGHTING);
+                                break;
+        case GLUT_KEY_F4    :
+                                myvirtualworld.toggleLight(0);
+                                break;
+        case GLUT_KEY_F5    :
+                                myvirtualworld.toggleLight(1);
+                                break;
+        case GLUT_KEY_F6    :
+                                myvirtualworld.toggleLight(2);
+                                break;
     }
     glutPostRedisplay();
 }
@@ -319,6 +325,7 @@ void myWelcome()
     cout << "|   F1                      => toggle shading / wire-frame mode |\n";
     cout << "|   F2                      => toggle rendering of axes         |\n";
     cout << "|   F3                      => toggle lighting on / off         |\n";
+    cout << "|   F4                      => toggle obj lighting on / off     |\n";
     cout << "|   F5                      => toggle star lighting on / off    |\n";
     cout << "|                                                               |\n";
     cout << "| Mouse (Left Drag or Right Drag) => rotate world               |\n";

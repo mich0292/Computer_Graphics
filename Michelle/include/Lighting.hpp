@@ -6,11 +6,11 @@
 namespace Lighting
 {
 using CGLab01::MyModelLoader;
-class Star
+class YellowStar
 {
 public:
-    Star();
-    ~Star();
+    YellowStar(){;}
+    ~YellowStar(){;}
     void setupLights();
     void toggleLight(int lightno);
     void draw();
@@ -21,5 +21,19 @@ private:
     bool lighton[1]; //keep track if lights are on or off
 };
 
+class WhiteStar
+{
+public:
+    WhiteStar(){;}
+    ~WhiteStar(){;}
+    void setupLights();
+    void toggleLight(int lightno);
+    void draw();
+    void init();
+private:
+    MyModelLoader starLoader;
+    long int timestart;
+    bool lighton[1]; //keep track if lights are on or off
+};
 }; //end of namespace CGLab12and13
 #endif
