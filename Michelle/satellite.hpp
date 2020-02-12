@@ -1,211 +1,24 @@
 #ifndef SATELLITE_HPP
 #define SATELLITE_HPP
-#include "CGLabmain.hpp"
+
 #include <GL/glut.h>
 #include <GL/glu.h>
 #include <stdlib.h>
-#include <memory.h>
-#include <math.h>
-#include <stdio.h>
-#include <string.h>
-
+#include "CGLabmain.hpp"
+#include "include/rgbLoader.hpp"
+#include "include/CGLab01.hpp"
+#include "include/Lighting.hpp"
 namespace satellite
 {
-struct GeImageData
-{
-    int width;
-    int height;
-    unsigned * bits;
-
-    GeImageData( int w = 0, int h = 0, unsigned * p = 0 )
-        : width( w ), height( h ), bits( p )
-    { }
-};
-typedef struct _ImageRec
-{
-    unsigned short imagic;
-    unsigned short type;
-    unsigned short dim;
-    unsigned short xsize, ysize, zsize;
-    unsigned int min, max;
-    unsigned int wasteBytes;
-    char name[80];
-    unsigned long colorMap;
-    FILE *file;
-    unsigned char *tmp, *tmpR, *tmpG, *tmpB;
-    unsigned long rleEnd;
-    unsigned int *rowStart;
-    int *rowSize;
-} ImageRec;
+using CGLab01::MyModelLoader;
+using Lighting::Star;
 class Globe
 {
 public:
     Globe();
     ~Globe();
+    void init();
     void draw();
-    bool ge_read_image( const char * filename, GeImageData * pImgData );
-    void rgbatorgba(unsigned char *r,unsigned char *g,unsigned char *b, unsigned char *a,unsigned char *l,int n);
-    void rgbtorgba(unsigned char *r,unsigned char *g,unsigned char *b, unsigned char *l,int n);
-    void bwtorgba(unsigned char *b,unsigned char *l,int n);
-    unsigned * ge_read_rgb( const char * name, int * width, int * height,int * components);
-    static void ConvertShort(unsigned short *array, unsigned int length)
-    {
-        unsigned short b1, b2;
-        unsigned char *ptr;
-
-        ptr = (unsigned char *)array;
-        while (length--)
-        {
-            b1 = *ptr++;
-            b2 = *ptr++;
-            *array++ = (b1 << 8) | (b2);
-        }
-    }
-    static void ConvertUint(unsigned *array, unsigned int length)
-    {
-        unsigned int b1, b2, b3, b4;
-        unsigned char *ptr;
-
-        ptr = (unsigned char *)array;
-        while (length--)
-        {
-            b1 = *ptr++;
-            b2 = *ptr++;
-            b3 = *ptr++;
-            b4 = *ptr++;
-            *array++ = (b1 << 24) | (b2 << 16) | (b3 << 8) | (b4);
-        }
-    }
-    static ImageRec * ImageOpen(const char *fileName)
-    {
-        union
-        {
-            int testWord;
-            char testByte[4];
-        } endianTest;
-        ImageRec *image;
-        int swapFlag;
-        int x;
-
-        endianTest.testWord = 1;
-        if (endianTest.testByte[0] == 1)
-        {
-            swapFlag = 1;
-        }
-        else
-        {
-            swapFlag = 0;
-        }
-
-        image = (ImageRec *)malloc(sizeof(ImageRec));
-        if (image == NULL)
-        {
-            fprintf(stderr, "Out of memory!\n");
-            exit(1);
-        }
-        if ((image->file = fopen(fileName, "rb")) == NULL)
-        {
-            perror(fileName);
-            //exit(1);
-            return NULL;
-        }
-
-        fread(image, 1, 12, image->file);
-
-        if (swapFlag)
-        {
-            ConvertShort(&image->imagic, 6);
-        }
-
-        image->tmp = (unsigned char *)malloc(image->xsize*256);
-        image->tmpR = (unsigned char *)malloc(image->xsize*256);
-        image->tmpG = (unsigned char *)malloc(image->xsize*256);
-        image->tmpB = (unsigned char *)malloc(image->xsize*256);
-        if (image->tmp == NULL || image->tmpR == NULL || image->tmpG == NULL ||
-                image->tmpB == NULL)
-        {
-            fprintf(stderr, "Out of memory!\n");
-            exit(1);
-        }
-
-        if ((image->type & 0xFF00) == 0x0100)
-        {
-            x = image->ysize * image->zsize * (int) sizeof(unsigned);
-            image->rowStart = (unsigned *)malloc(x);
-            image->rowSize = (int *)malloc(x);
-            if (image->rowStart == NULL || image->rowSize == NULL)
-            {
-                fprintf(stderr, "Out of memory!\n");
-                exit(1);
-            }
-            image->rleEnd = 512 + (2 * x);
-            fseek(image->file, 512, SEEK_SET);
-            fread(image->rowStart, 1, x, image->file);
-            fread(image->rowSize, 1, x, image->file);
-            if (swapFlag)
-            {
-                ConvertUint(image->rowStart, x/(int) sizeof(unsigned));
-                ConvertUint((unsigned *)image->rowSize, x/(int) sizeof(int));
-            }
-        }
-        return image;
-    }
-    static void ImageClose(ImageRec *image)
-    {
-        fclose(image->file);
-        free(image->tmp);
-        free(image->tmpR);
-        free(image->tmpG);
-        free(image->tmpB);
-        free(image);
-    }
-    static void ImageGetRow(ImageRec *image, unsigned char *buf, int y, int z)
-    {
-        unsigned char *iPtr, *oPtr, pixel;
-        int count;
-
-        if ((image->type & 0xFF00) == 0x0100)
-        {
-            fseek(image->file, (long) image->rowStart[y+z*image->ysize],
-                  SEEK_SET);
-            fread(image->tmp, 1, (unsigned int)image->rowSize[y+z*image->ysize],
-                  image->file);
-
-            iPtr = image->tmp;
-            oPtr = buf;
-            for (;;)
-            {
-                pixel = *iPtr++;
-                count = (int)(pixel & 0x7F);
-                if (!count)
-                {
-                    return;
-                }
-                if (pixel & 0x80)
-                {
-                    while (count--)
-                    {
-                        *oPtr++ = *iPtr++;
-                    }
-                }
-                else
-                {
-                    pixel = *iPtr++;
-                    while (count--)
-                    {
-                        *oPtr++ = pixel;
-                    }
-                }
-            }
-        }
-        else
-        {
-            fseek(image->file,
-                  512+(y*image->xsize)+(z*image->xsize*image->ysize),
-                  SEEK_SET);
-            fread(buf, 1, image->xsize, image->file);
-        }
-    }
 private:
     // whether to animate
     GLboolean g_rotate = GL_TRUE;
@@ -221,7 +34,30 @@ private:
 
     // light position
     GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
+};
 
+class Planet
+{
+public:
+    Planet();
+    ~Planet();
+    void init();
+    void draw();
+private:
+    // whether to animate
+    GLboolean g_rotate = GL_TRUE;
+
+    // texture and glu data
+    GLUquadricObj * g_sphere = NULL;
+    GeImageData g_imgData;
+    GLuint g_img = 0;
+
+    GLfloat g_angle_x = 27.0f;
+    GLfloat g_inc = 0.0f;
+    char g_filename[128] = "D:/CG LABBBBBB/Test globe/globe/planet.rgb";
+
+    // light position
+    GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
 };
 
 class Satellite
@@ -248,21 +84,19 @@ private:
 
 class MyVirtualWorld
 {
+    const int NUM_OF_STARS = 2;
     long int timeold, timenew, elapseTime;
     Satellite satellite;
+    MyModelLoader prometheusloader;
+    MyModelLoader capsuleloader;
+    Star star[2];
     Globe globe;
+    Planet planet;
+    bool lighton[7]; //keep track if lights are on or off
 public:
-    void draw()
-    {
-        //satellite.drawBottom();
-        //satellite.drawTop();
-        //satellite.drawTopStem(); // IGNORE!! only for drawTop()
-        //satellite.drawWing();
-        //satellite.drawBody();
-        //satellite.draw();
-        globe.draw();
-    }
-
+    void draw();
+    void setupLights();
+    void toggleLight(int lightno);
     void tickTime()
     {
         timenew = glutGet(GLUT_ELAPSED_TIME);
@@ -274,7 +108,15 @@ public:
     void init()
     {
         timeold = glutGet(GLUT_ELAPSED_TIME);
-
+        globe.init();
+        planet.init();
+        prometheusloader.load("D:/CG LABBBBBB/Michelle/data/Prometheus.txt", 2 );
+        capsuleloader.load("D:/CG LABBBBBB/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
+        for ( int i = 0; i < NUM_OF_STARS; i++)
+        {
+            star[i].init();
+        }
+        setupLights();
     }
 };
 

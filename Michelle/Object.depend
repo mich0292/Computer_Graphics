@@ -251,7 +251,7 @@
 	<GL/glut.h>
 	"model.hpp"
 
-1581441702 source:d:\computergraphics\michelle\cglabmain.cpp
+1581421243 source:d:\computergraphics\michelle\cglabmain.cpp
 	"CGLabxx.hpp"
 	<cstdlib>
 	<iostream>
@@ -274,7 +274,7 @@
 	<GL/glut.h>
 	"satellite.hpp"
 
-1581441864 d:\computergraphics\michelle\satellite.hpp
+1581423472 d:\computergraphics\michelle\satellite.hpp
 	"CGLabmain.hpp"
 	<GL/glut.h>
 	<GL/glu.h>
@@ -284,7 +284,7 @@
 	<stdio.h>
 	<string.h>
 
-1581441486 source:d:\computergraphics\michelle\satellite.cpp
+1581423652 source:d:\computergraphics\michelle\satellite.cpp
 	"satellite.hpp"
 
 1581423704 source:d:\computergraphics\michelle\globe.cpp
@@ -311,4 +311,123 @@
 1341006780 d:\codeblocks\mingw\include\sys\types.h
 	<_mingw.h>
 	<stddef.h>
+
+1581497401 source:d:\cg labbbbbb\michelle\cglabmain.cpp
+	<cstdlib>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<GL/glut.h>
+	"CGLabmain.hpp"
+	"satellite.hpp"
+
+1581322473 d:\cg labbbbbb\michelle\cglabmain.hpp
+	<string>
+	<cmath>
+	<iostream>
+	<GL/glut.h>
+
+1581498184 d:\cg labbbbbb\michelle\satellite.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	"CGLabmain.hpp"
+	"include/rgbLoader.hpp"
+	"include/CGLab01.hpp"
+	"include/Lighting.hpp"
+
+1581497744 source:d:\cg labbbbbb\michelle\satellite.cpp
+	"satellite.hpp"
+
+1581423704 source:d:\cg labbbbbb\michelle\globe.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+
+1581456472 source:d:\cg labbbbbb\michelle\rgbloader.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+	"rgbLoader.hpp"
+
+1581456215 d:\cg labbbbbb\michelle\rgbloader.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+
+1581456534 d:\cg labbbbbb\michelle\rgbloader.hpp
+
+1581497026 source:d:\cg labbbbbb\michelle\cglab01.cpp
+	<GL/glut.h>
+	<string>
+	<fstream>
+	"CGLab01.hpp"
+	<iostream>
+
+1581496515 d:\cg labbbbbb\michelle\cglab01.hpp
+	"CGLabmain.hpp"
+	<string>
+	<vector>
+
+1581496008 d:\cg labbbbbb\michelle\cglab11and12.hpp
+	<cmath>
+	"CGLabmain.hpp"
+
+1581495728 source:d:\cg labbbbbb\michelle\cglab11and12.cpp
+	<GL/glut.h>
+	"CGLab11and12.hpp"
+
+1581497173 d:\cg labbbbbb\michelle\lighting.hpp
+	<cmath>
+	"CGLabmain.hpp"
+	"CGLab01.hpp"
+
+1581497424 source:d:\cg labbbbbb\michelle\lighting.cpp
+	<GL/glut.h>
+	"Lighting.hpp"
+
+1581498012 source:d:\cg labbbbbb\michelle\src\rgbloader.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+	"../include/rgbLoader.hpp"
+
+1581456534 d:\cg labbbbbb\michelle\include\rgbloader.hpp
+
+1581498006 source:d:\cg labbbbbb\michelle\src\lighting.cpp
+	<GL/glut.h>
+	"../include/Lighting.hpp"
+
+1581498099 d:\cg labbbbbb\michelle\include\lighting.hpp
+	<cmath>
+	"../CGLabmain.hpp"
+	"CGLab01.hpp"
+
+1581498018 d:\cg labbbbbb\michelle\include\cglab01.hpp
+	"../CGLabmain.hpp"
+	<string>
+	<vector>
+
+1581498024 source:d:\cg labbbbbb\michelle\src\cglab01.cpp
+	<GL/glut.h>
+	<string>
+	<fstream>
+	"../include/CGLab01.hpp"
+	<iostream>
 
