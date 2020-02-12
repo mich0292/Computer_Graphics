@@ -251,8 +251,7 @@
 	<GL/glut.h>
 	"model.hpp"
 
-1581421243 source:d:\computergraphics\michelle\cglabmain.cpp
-	"CGLabxx.hpp"
+1581503249 source:d:\computergraphics\michelle\cglabmain.cpp
 	<cstdlib>
 	<iostream>
 	<iomanip>
@@ -274,17 +273,16 @@
 	<GL/glut.h>
 	"satellite.hpp"
 
-1581423472 d:\computergraphics\michelle\satellite.hpp
-	"CGLabmain.hpp"
+1581510537 d:\computergraphics\michelle\satellite.hpp
 	<GL/glut.h>
 	<GL/glu.h>
 	<stdlib.h>
-	<memory.h>
-	<math.h>
-	<stdio.h>
-	<string.h>
+	"CGLabmain.hpp"
+	"include/rgbLoader.hpp"
+	"include/CGLab01.hpp"
+	"include/Lighting.hpp"
 
-1581423652 source:d:\computergraphics\michelle\satellite.cpp
+1581503676 source:d:\computergraphics\michelle\satellite.cpp
 	"satellite.hpp"
 
 1581423704 source:d:\computergraphics\michelle\globe.cpp
@@ -430,4 +428,37 @@
 	<fstream>
 	"../include/CGLab01.hpp"
 	<iostream>
+
+1581456534 d:\computergraphics\michelle\include\rgbloader.hpp
+
+1581498018 d:\computergraphics\michelle\include\cglab01.hpp
+	"../CGLabmain.hpp"
+	<string>
+	<vector>
+
+1581502565 d:\computergraphics\michelle\include\lighting.hpp
+	<cmath>
+	"../CGLabmain.hpp"
+	"CGLab01.hpp"
+
+1581498024 source:d:\computergraphics\michelle\src\cglab01.cpp
+	<GL/glut.h>
+	<string>
+	<fstream>
+	"../include/CGLab01.hpp"
+	<iostream>
+
+1581503416 source:d:\computergraphics\michelle\src\lighting.cpp
+	<GL/glut.h>
+	"../include/Lighting.hpp"
+
+1581498012 source:d:\computergraphics\michelle\src\rgbloader.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+	"../include/rgbLoader.hpp"
 

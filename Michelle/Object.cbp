@@ -44,6 +44,13 @@
 		</Linker>
 		<Unit filename="CGLabmain.cpp" />
 		<Unit filename="CGLabmain.hpp" />
+		<Unit filename="data/Prometheus.txt" />
+		<Unit filename="data/capsule.txt" />
+		<Unit filename="data/cube.txt" />
+		<Unit filename="data/map.rgb" />
+		<Unit filename="data/monkey.txt" />
+		<Unit filename="data/shuttle.txt" />
+		<Unit filename="data/star.txt" />
 		<Unit filename="include/CGLab01.hpp" />
 		<Unit filename="include/Lighting.hpp" />
 		<Unit filename="include/rgbLoader.hpp" />

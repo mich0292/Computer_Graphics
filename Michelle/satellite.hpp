@@ -31,7 +31,7 @@ private:
 
     GLfloat g_angle_x = 27.0f;
     GLfloat g_inc = 0.0f;
-    char g_filename[128] = "D:/ComputerGraphics/Michelle/map.rgb";
+    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/map.rgb";
 
     // light position
     GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
@@ -55,7 +55,7 @@ private:
 
     GLfloat g_angle_x = 27.0f;
     GLfloat g_inc = 0.0f;
-    char g_filename[128] = "D:/CG LABBBBBB/Test globe/globe/planet.rgb";
+    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/planet.rgb";
 
     // light position
     GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
