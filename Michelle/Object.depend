@@ -283,7 +283,7 @@
 	"include/Lighting.hpp"
 	"include/World.hpp"
 
-1581582758 source:d:\computergraphics\michelle\satellite.cpp
+1581583525 source:d:\computergraphics\michelle\satellite.cpp
 	"satellite.hpp"
 
 1581423704 source:d:\computergraphics\michelle\globe.cpp
@@ -538,7 +538,7 @@
 	<GL/glu.h>
 	<stdlib.h>
 
-1581580308 source:d:\computergraphics\michelle\src\world.cpp
+1581582867 source:d:\computergraphics\michelle\src\world.cpp
 	<GL/glut.h>
 	"../include/World.hpp"
 
