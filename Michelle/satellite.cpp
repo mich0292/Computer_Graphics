@@ -544,6 +544,21 @@ void MyVirtualWorld::draw()
     glPushMatrix();
     point.draw();
     glPopMatrix();
+
+    ///Hotel
+    glPushMatrix();
+        glTranslatef(20, 20, -20);
+        glRotatef(-45, 1, 0, 0);
+        glScalef(0.5, 0.5, 0.5);
+        hotel.draw();
+    glPopMatrix();
+
+    ///UFO
+    glPushMatrix();
+        glTranslatef(50, 50, 50);
+        glScalef(0.5, 0.5, 0.5);
+        ufo.draw();
+    glPopMatrix();
 }
 
 void MyVirtualWorld::setupLights()

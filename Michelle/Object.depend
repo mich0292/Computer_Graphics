@@ -542,3 +542,81 @@
 	<GL/glut.h>
 	"../include/World.hpp"
 
+1581583605 source:c:\users\user\documents\github\computergraphics\michelle\cglabmain.cpp
+	<cstdlib>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<GL/glut.h>
+	"CGLabmain.hpp"
+	"satellite.hpp"
+
+1581580670 c:\users\user\documents\github\computergraphics\michelle\cglabmain.hpp
+	<string>
+	<cmath>
+	<iostream>
+	<GL/glut.h>
+
+1581593266 c:\users\user\documents\github\computergraphics\michelle\satellite.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	"CGLabmain.hpp"
+	"include/rgbLoader.hpp"
+	"include/CGLab01.hpp"
+	"include/Lighting.hpp"
+	"include/World.hpp"
+	"include/Space.hpp"
+
+1581580671 c:\users\user\documents\github\computergraphics\michelle\include\rgbloader.hpp
+
+1581583605 c:\users\user\documents\github\computergraphics\michelle\include\cglab01.hpp
+	"../CGLabmain.hpp"
+	<string>
+	<vector>
+
+1581583605 c:\users\user\documents\github\computergraphics\michelle\include\lighting.hpp
+	<cmath>
+	"../CGLabmain.hpp"
+	"CGLab01.hpp"
+
+1581580671 c:\users\user\documents\github\computergraphics\michelle\include\world.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1581592344 source:c:\users\user\documents\github\computergraphics\michelle\satellite.cpp
+	"satellite.hpp"
+
+1581583605 source:c:\users\user\documents\github\computergraphics\michelle\src\cglab01.cpp
+	<GL/glut.h>
+	<string>
+	<fstream>
+	"../include/CGLab01.hpp"
+	<iostream>
+
+1581583605 source:c:\users\user\documents\github\computergraphics\michelle\src\lighting.cpp
+	<GL/glut.h>
+	"../include/Lighting.hpp"
+
+1581580671 source:c:\users\user\documents\github\computergraphics\michelle\src\rgbloader.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+	"../include/rgbLoader.hpp"
+
+1581583605 source:c:\users\user\documents\github\computergraphics\michelle\src\world.cpp
+	<GL/glut.h>
+	"../include/World.hpp"
+
+1581592564 c:\users\user\documents\github\computergraphics\michelle\include\space.hpp
+
+1581592591 source:c:\users\user\documents\github\computergraphics\michelle\src\space.cpp
+	<GL/glut.h>
+	<cmath>
+	"../include/Space.hpp"
+
