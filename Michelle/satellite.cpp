@@ -1,25 +1,7 @@
 #include "satellite.hpp"
 using namespace satellite;
 
-/******************************************************************************
-*************   	      		  Point					    	  *************
-******************************************************************************/
-void Point::draw(){
-    glPointSize(2.0);
-    srand(1);
 
-    glColor3f(1.0f, 1.0f, 1.0f);
-    GLfloat x,y,z;
-    glBegin(GL_POINTS);
-    for (int i=0; i<1000; ++i)
-    {
-        x = (rand()%10000)/10000.0 * 1000.0 - 500.0;
-        y = (rand()%10000)/10000.0 * 1000.0 - 500.0;
-        z = (rand()%10000)/10000.0 * 1000.0 - 500.0;
-        glVertex3f(x,y,z);
-    }
-    glEnd();
-}
 
 /******************************************************************************
 *************   	      		  Globe					    	  *************
@@ -593,7 +575,8 @@ void MyVirtualWorld::setupLights()
     capsuleloader.setupLights();
     prometheusloader.setupLights();
     satelliteloader.setupLights();
-    for (int i=0; i<6; ++i)
+    point.setupLights();
+    for (int i=0; i<7; ++i)
         lighton[i] = true;
 }
 
@@ -609,15 +592,14 @@ void MyVirtualWorld::toggleLight(int lightno)
     }
     else if (lightno==1)
     {
-        yellowStar.toggleLight(lightno-1);
-
+        yellowStar.toggleLight();
     }
     else if (lightno==2)
     {
-        whiteStar.toggleLight(lightno-2);
+        whiteStar.toggleLight();
     }
-        else if (lightno>=4 && lightno<=5)
+    else if (lightno==3)
     {
-        //myswinglights.toggleLight(lightno-4);
+       point.toggleLight();
     }
 }

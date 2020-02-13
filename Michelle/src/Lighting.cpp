@@ -13,9 +13,52 @@ CHANGE LOG
 #include "../include/Lighting.hpp"
 using namespace Lighting;
 
+/******************************************************************************
+*************   	      		  Point					    	  *************
+******************************************************************************/
+void Point::draw(){
+    glPointSize(2.5);
+    srand(1);
+
+    glColor3f(1.0f, 1.0f, 1.0f);
+
+    GLfloat x,y,z;
+    glBegin(GL_POINTS);
+    for (int i=0; i<1000; ++i)
+    {
+        x = (rand()%10000)/10000.0 * 1000.0 - 500.0;
+        y = (rand()%10000)/10000.0 * 1000.0 - 500.0;
+        z = (rand()%10000)/10000.0 * 1000.0 - 500.0;
+
+        glVertex3f(x,y,z);
+
+    }
+    glEnd();
+}
+void Point::setupLights()
+{
+    glLightfv(GL_LIGHT3, GL_DIFFUSE, mywhite);
+    glLightfv(GL_LIGHT3, GL_SPECULAR, mywhite);
+    glLightf (GL_LIGHT3, GL_CONSTANT_ATTENUATION, 0.5);
+    glEnable(GL_LIGHT3);
+    lighton = GL_TRUE;
+}
+
+void Point::toggleLight()
+{
+    lighton= !lighton;
+    if (lighton)
+        glEnable( GL_LIGHT3 );
+    else
+        glDisable( GL_LIGHT3 );
+}
+/******************************************************************************
+*************   	      		  YellowStar					  *************
+******************************************************************************/
+
 void YellowStar::init(){
-    //starLoader.load("D:/CG LABBBBBB/Michelle/data/star.txt", 0.05);
-    starLoader.load("data/star.txt", 0.05);
+    //starLoader.load("data/star.txt", 0.05);
+    starLoader.load("D:/ComputerGraphics/Michelle/data/star.txt", 0.05);
 
 }
 void YellowStar::setupLights()
@@ -27,20 +70,19 @@ void YellowStar::setupLights()
     glLightf (GL_LIGHT1, GL_LINEAR_ATTENUATION, 0.5);
 
     glEnable(GL_LIGHT1);
-    lighton[0] = true;
+    lighton = GL_TRUE;
 }
 
 //light 0 is a directional light
 //lights 1,2,3 are lights 0,1,2 of spotlights
 //lights 4,5 are lights 0,1 of swinglights
-void YellowStar::toggleLight(int lightno)
+void YellowStar::toggleLight()
 {
-    static GLenum tag[] = {GL_LIGHT1};
-    lighton[lightno] = !lighton[lightno];
-    if (lighton[lightno])
-        glEnable( tag[lightno] );
+    lighton= !lighton;
+    if (lighton)
+        glEnable( GL_LIGHT1 );
     else
-        glDisable( tag[lightno] );
+        glDisable( GL_LIGHT1 );
 }
 
 void YellowStar::draw()
@@ -56,16 +98,19 @@ void YellowStar::draw()
         glColor3f(1.0f, 1.0f, 0.2f);
         starLoader.draw();
     glLightfv(GL_LIGHT1, GL_POSITION, position);
-    glLightfv(GL_LIGHT2, GL_SPOT_DIRECTION, direction);
+    glLightfv(GL_LIGHT1, GL_SPOT_DIRECTION, direction);
 
     glPopMatrix();
     if (cullingIsOn==GL_TRUE)
         glEnable(GL_CULL_FACE);
 }
 
+/******************************************************************************
+*************   	      		  WhiteStar				     	  *************
+******************************************************************************/
 void WhiteStar::init(){
-    //starLoader.load("C:/Users/asus/Google Drive (foofangjee@gmail.com)/Semester 2/TGD2151/Assignment/GitHub/ComputerGraphics/Michelle/data/star.txt", 0.05);
-    starLoader.load("data/star.txt", 0.05);
+    //starLoader.load("data/star.txt", 0.05);
+    starLoader.load("D:/ComputerGraphics/Michelle/data/star.txt", 0.05);
 }
 void WhiteStar::setupLights()
 {
@@ -76,20 +121,19 @@ void WhiteStar::setupLights()
     glLightf (GL_LIGHT2, GL_LINEAR_ATTENUATION, 0.5);
 
     glEnable(GL_LIGHT2);
-    lighton[0] = true;
+    lighton = GL_TRUE;
 }
 
 //light 0 is a directional light
 //lights 1,2,3 are lights 0,1,2 of spotlights
 //lights 4,5 are lights 0,1 of swinglights
-void WhiteStar::toggleLight(int lightno)
+void WhiteStar::toggleLight()
 {
-    static GLenum tag[] = {GL_LIGHT2};
-    lighton[lightno] = !lighton[lightno];
-    if (lighton[lightno])
-        glEnable( tag[lightno] );
+    lighton= !lighton;
+    if (lighton)
+        glEnable( GL_LIGHT2 );
     else
-        glDisable( tag[lightno] );
+        glDisable( GL_LIGHT2 );
 }
 
 void WhiteStar::draw()
