@@ -519,7 +519,7 @@ void MyVirtualWorld::draw()
         glTranslatef(35.0f, 40.0f, -35.0f);
         glRotatef(90, 0.0f, 1.0f, 0.0f);
         glRotatef(-90, 1.0f, 0.0f, 0.0f);
-        prometheusloader.draw(0, 1, 0, 0);
+        prometheusloader.draw(0, 1, 0, 0, GL_TRUE);
     glPopMatrix();
     ///Station
     glPushMatrix();
@@ -531,7 +531,7 @@ void MyVirtualWorld::draw()
     glPushMatrix();
         glTranslatef(-20.0f, 4.0f, -250.0f);
         glRotatef(-90, 1.0f, 0.0f, 0.0f);
-        tyderiumloader.draw(0, -1, 0, 0);
+        tyderiumloader.draw(0, -1, 0, 0, GL_TRUE);
     glPopMatrix();
     ///LIGHTS
     glPushMatrix();

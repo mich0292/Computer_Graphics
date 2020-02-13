@@ -121,14 +121,16 @@ void SpaceStation::drawBody(){
     glPopMatrix();
 
     glPushMatrix();
-    glRotatef(angle, 0.0, 0.0, 1.0);
+    if (g_rotate)
+        glRotatef(angle, 0.0, 0.0, 1.0);
     glTranslatef(0.0f, -0.5f, 24.0f);
     glRotatef(-45.0, 1.0, 0.0, 0.0);
     gluCylinder(pObj, 0.1f, 0.1f, 1.5f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glRotatef(angle, 0.0f, 0.0f, 1.0f);
+    if (g_rotate)
+        glRotatef(angle, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, 1.5f, 25.3f);
     glRotatef(90.0, 1.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.3f, 0.3f, 3.0f, 26, 13);
@@ -136,39 +138,45 @@ void SpaceStation::drawBody(){
 
     glColor3f(1.0f, 1.0f, 1.0f);
     glPushMatrix();
-    glRotatef(angle, 0.0f, 0.0f, 1.0f);
+    if (g_rotate)
+        glRotatef(angle, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, 11.5f, 25.3f);
     glRotatef(90.0, 1.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.1f, 0.1f, 10.0f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glRotatef(angle, 0.0f, 0.0f, 1.0f);
+    if (g_rotate)
+        glRotatef(angle, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, -1.5f, 25.3f);
     glRotatef(90.0, 1.0f, 0.0f, 0.0f);
     gluCylinder(pObj, 0.1f, 0.1f, 10.0f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glRotatef(angle, 0.0f, 0.0f, 1.0f);
+    if (g_rotate)
+        glRotatef(angle, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, 11.5f, 23.0f);
     gluCylinder(pObj, 0.1f, 0.1f, 5.0f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glRotatef(angle, 0.0f, 0.0f, 1.0f);
+    if (g_rotate)
+        glRotatef(angle, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, 1.8f, 23.0f);
     gluCylinder(pObj, 0.1f, 0.1f, 5.0f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glRotatef(angle, 0.0f, 0.0f, 1.0f);
+    if (g_rotate)
+        glRotatef(angle, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, -1.8f, 23.0f);
     gluCylinder(pObj, 0.1f, 0.1f, 5.0f, 26, 13);
     glPopMatrix();
 
     glPushMatrix();
-    glRotatef(angle, 0.0f, 0.0f, 1.0f);
+    if (g_rotate)
+        glRotatef(angle, 0.0f, 0.0f, 1.0f);
     glTranslatef(0.0f, -11.5f, 23.0f);
     gluCylinder(pObj, 0.1f, 0.1f, 5.0f, 26, 13);
     glPopMatrix();

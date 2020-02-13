@@ -34,7 +34,7 @@ class MyModelLoader
     }
     //load a model and scale it
     void load(string filename, float scale = 1.0f, float color1 = 1.0f, float color2 = 0.8f, float color3 = 0.4f);
-    void draw(float x = 0.0f, float y = 0.0f, float z = 0.0f, float angle = 0, bool movingFlag = FALSE);
+    void draw(float x = 0.0f, float y = 0.0f, float z = 0.0f, float angle = 0, GLboolean movingFlag = GL_FALSE);
     void tickTime(long int elapseTime, float speed = 0.0f);
     void setupLights();
     inline void toggleMovement(){ g_movement = !g_movement;}

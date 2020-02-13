@@ -157,6 +157,7 @@ public:
         globe.toggleRotation();
         prometheusloader.toggleMovement();
         satelliteloader.toggleMovement();
+        tyderiumloader.toggleMovement();
         station.toggleRotation();
         satellite.toggleRotation();
     }
