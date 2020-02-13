@@ -10,6 +10,7 @@ class SpaceStation{
 private:
     GLUquadricObj *pObj;
     GLfloat angle;
+    GLboolean g_rotate = GL_TRUE;
 
 public:
     SpaceStation();
@@ -18,6 +19,7 @@ public:
     void drawBody();
     void drawSolarPanel();
     void tickTime(long int elapseTime);
+    inline void toggleRotation(){ g_rotate = !g_rotate;}
 };
 
 class Rocket{

@@ -29,9 +29,12 @@ public:
     ~Globe();
     void init();
     void draw();
+    inline void toggleTexture(){ g_texture = !g_texture;}
+    inline void toggleRotation(){ g_rotate = !g_rotate;}
 private:
     // whether to animate
     GLboolean g_rotate = GL_TRUE;
+    GLboolean g_texture = GL_TRUE;
 
     // texture and glu data
     GLUquadricObj * g_sphere = NULL;
@@ -40,7 +43,8 @@ private:
 
     GLfloat g_angle_x = 27.0f;
     GLfloat g_inc = 0.0f;
-    char g_filename[128] = "data/map.rgb";
+    //char g_filename[128] = "data/map.rgb";
+    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/map.rgb";
 
     // light position
     GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
@@ -53,9 +57,12 @@ public:
     ~Planet();
     void init();
     void draw();
+    inline void toggleTexture(){ g_texture = !g_texture;}
+    inline void toggleRotation(){ g_rotate = !g_rotate;}
 private:
     // whether to animate
     GLboolean g_rotate = GL_TRUE;
+    GLboolean g_texture = GL_TRUE;
 
     // texture and glu data
     GLUquadricObj * g_sphere = NULL;
@@ -64,7 +71,8 @@ private:
 
     GLfloat g_angle_x = 27.0f;
     GLfloat g_inc = 0.0f;
-    char g_filename[128] = "data/planet.rgb";
+    //char g_filename[128] = "data/planet.rgb";
+    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/planet.rgb";
 
     // light position
     GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
@@ -86,10 +94,14 @@ public:
     void drawBottomBody();
     void drawCube(float color[]);
     void tickTime(long int elapseTime);
+    inline void toggleRotation(){ g_rotate = !g_rotate;}
 
 private:
     GLUquadricObj *pObj;
     GLfloat angle = 0.0f;
+    // whether to animate
+    GLboolean g_rotate = GL_TRUE;
+
 };
 
 class MyVirtualWorld
@@ -140,6 +152,20 @@ public:
         yellowStar.init();
         whiteStar.init();
         setupLights();
+    }
+
+    void toggleAnimation(){
+        planet.toggleRotation();
+        globe.toggleRotation();
+        prometheusloader.toggleMovement();
+        satelliteloader.toggleMovement();
+        station.toggleRotation();
+        satellite.toggleRotation();
+    }
+
+    void toggleTexture(){
+        planet.toggleTexture();
+        globe.toggleTexture();
     }
 };
 

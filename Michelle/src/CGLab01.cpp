@@ -108,9 +108,9 @@ void MyModelLoader::load(string filename, float scale, float color1, float color
 void MyModelLoader::draw(float x, float y, float z, float angle, bool movingFlag)
 {
     glDisable(GL_CULL_FACE);
-        if (angle)
+        if (angle && g_movement)
             glRotatef(angle*movement, x, y, z);
-        if (!angle || movingFlag)
+        if (!angle || movingFlag && g_movement)
             glTranslatef(x*movement, y*movement, z*movement);
         glCallList(stanforddragon);
     glEnable(GL_CULL_FACE);

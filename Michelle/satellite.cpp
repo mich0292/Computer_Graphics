@@ -74,7 +74,7 @@ void Globe::draw()
     // clear the color and depth buffers
     //glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
-    if( g_img )
+    if( g_img && g_texture)
     {
         glEnable( GL_TEXTURE_2D );
         glBindTexture( GL_TEXTURE_2D, g_img );
@@ -122,18 +122,7 @@ void Planet::init()
 
     // set the initial line width
     glLineWidth( 1.0f );
-    /*
-        // enable lighting
-        glEnable( GL_LIGHTING );
-        // enable lighting for front
-        glLightModeli( GL_FRONT, GL_TRUE );
-        // material have diffuse and ambient lighting
-        glColorMaterial( GL_FRONT, GL_AMBIENT_AND_DIFFUSE );
-        // enable color
-        glEnable( GL_COLOR_MATERIAL );
-        // enable light 0
-        glEnable( GL_LIGHT1 );
-    */
+
     // set texture state
     glPixelStorei( GL_UNPACK_ALIGNMENT, 4 );
     glTexEnvi( GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE );
@@ -167,7 +156,7 @@ void Planet::draw()
     // clear the color and depth buffers
     //glClear( GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT );
 
-    if( g_img )
+    if( g_img && g_texture)
     {
         glEnable( GL_TEXTURE_2D );
         glBindTexture( GL_TEXTURE_2D, g_img );
@@ -215,22 +204,8 @@ Satellite::~Satellite()
 
 void Satellite::tickTime(long int elapsedTime)
 {
-    bool reachEnd = false;
-    if (reachEnd)
-    {
-        angle -= 0.05f;
-    }
-    else
-    {
+    if (g_rotate)
         angle = angle + 0.01f;
-    }
-
-
-    if (angle < -90.0f || angle > 90.0f )
-    {
-        reachEnd = true;
-    }
-
 }
 
 void Satellite::draw()

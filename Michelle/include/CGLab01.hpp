@@ -37,11 +37,13 @@ class MyModelLoader
     void draw(float x = 0.0f, float y = 0.0f, float z = 0.0f, float angle = 0, bool movingFlag = FALSE);
     void tickTime(long int elapseTime, float speed = 0.0f);
     void setupLights();
+    inline void toggleMovement(){ g_movement = !g_movement;}
  private:
     vector<GLfloat> vertices;
     vector<int> faces;
     GLuint stanforddragon; //for generating display list
     GLfloat movement;
+    GLboolean g_movement = GL_TRUE;
 };
 
 }; //end of namespace CGLab01

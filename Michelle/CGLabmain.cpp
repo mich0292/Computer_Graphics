@@ -138,6 +138,12 @@ void mySpecialFunc(int key, int x, int y)
         case GLUT_KEY_F6    :
                                 myvirtualworld.toggleLight(2);
                                 break;
+        case GLUT_KEY_F11    :
+                                myvirtualworld.toggleAnimation();
+                                break;
+        case GLUT_KEY_F12    :
+                                myvirtualworld.toggleTexture();
+                                break;
     }
     glutPostRedisplay();
 }
