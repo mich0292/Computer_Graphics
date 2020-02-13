@@ -16,6 +16,12 @@ using Lighting::YellowStar;
 using Lighting::WhiteStar;
 using World::Rocket;
 using World::SpaceStation;
+
+class Point{
+public:
+    void draw();
+};
+
 class Globe
 {
 public:
@@ -34,7 +40,7 @@ private:
 
     GLfloat g_angle_x = 27.0f;
     GLfloat g_inc = 0.0f;
-    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/map.rgb";
+    char g_filename[128] = "data/map.rgb";
 
     // light position
     GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
@@ -58,7 +64,7 @@ private:
 
     GLfloat g_angle_x = 27.0f;
     GLfloat g_inc = 0.0f;
-    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/planet.rgb";
+    char g_filename[128] = "data/planet.rgb";
 
     // light position
     GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
@@ -101,6 +107,7 @@ class MyVirtualWorld
     Planet planet;
     Rocket rocket;
     SpaceStation station;
+    Point point;
     bool lighton[7]; //keep track if lights are on or off
 public:
     void draw();
@@ -125,11 +132,11 @@ public:
         globe.init();
         planet.init();
         //prometheusloader.load("D:/CG LABBBBBB/Michelle/data/Prometheus.txt", 2 );
-        prometheusloader.load("D:/ComputerGraphics/Michelle/data/Prometheus.txt", 3 );
+        prometheusloader.load("/data/Prometheus.txt", 3 );
         //capsuleloader.load("D:/CG LABBBBBB/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
-        capsuleloader.load("D:/ComputerGraphics/Michelle/data/capsule.txt", 0.02, 0.560, 0.570, 0.580);
-        satelliteloader.load("D:/ComputerGraphics/Michelle/data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
-        tyderiumloader.load("D:/ComputerGraphics/Michelle/data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
+        capsuleloader.load("data/capsule.txt", 0.02, 0.560, 0.570, 0.580);
+        satelliteloader.load("data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
+        tyderiumloader.load("data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
         yellowStar.init();
         whiteStar.init();
         setupLights();
