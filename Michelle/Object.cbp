@@ -53,6 +53,7 @@
 		<Unit filename="data/star.txt" />
 		<Unit filename="include/CGLab01.hpp" />
 		<Unit filename="include/Lighting.hpp" />
+		<Unit filename="include/Space.hpp" />
 		<Unit filename="include/World.hpp" />
 		<Unit filename="include/rgbLoader.hpp" />
 		<Unit filename="satellite.cpp" />
@@ -60,6 +61,7 @@
 		<Unit filename="src/CGLab01.cpp" />
 		<Unit filename="src/Lighting.cpp" />
 		<Unit filename="src/Object.cbp" />
+		<Unit filename="src/Space.cpp" />
 		<Unit filename="src/World.cpp" />
 		<Unit filename="src/rgbLoader.cpp" />
 		<Extensions>
