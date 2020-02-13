@@ -585,7 +585,7 @@
 	<GL/glu.h>
 	<stdlib.h>
 
-1581592344 source:c:\users\user\documents\github\computergraphics\michelle\satellite.cpp
+1581593641 source:c:\users\user\documents\github\computergraphics\michelle\satellite.cpp
 	"satellite.hpp"
 
 1581583605 source:c:\users\user\documents\github\computergraphics\michelle\src\cglab01.cpp
@@ -613,7 +613,7 @@
 	<GL/glut.h>
 	"../include/World.hpp"
 
-1581592564 c:\users\user\documents\github\computergraphics\michelle\include\space.hpp
+1581597017 c:\users\user\documents\github\computergraphics\michelle\include\space.hpp
 
 1581592591 source:c:\users\user\documents\github\computergraphics\michelle\src\space.cpp
 	<GL/glut.h>

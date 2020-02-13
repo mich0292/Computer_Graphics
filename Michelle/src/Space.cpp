@@ -9,6 +9,7 @@ SpaceHotel::SpaceHotel(){
 }
 
 void SpaceHotel::drawConnector(){
+    glColor3f(0.2, 0.2, 0.2);
     glTranslatef(0, 8, 0);
     glRotatef(-90, 1, 0, 0);
         gluCylinder(qObj, 0.75, 0.75, 2, 32, 32);
@@ -16,6 +17,15 @@ void SpaceHotel::drawConnector(){
         gluCylinder(qObj, 0.25, 0.25, 2, 32, 32);
     glTranslatef(0, 2, 0);
         gluCylinder(qObj, 0.25, 0.25, 2, 32, 32);
+}
+
+void SpaceHotel::drawLightBulb(){
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    glColor4f(0, 0, 0.5, 0.5);
+    glTranslatef(0, 6.5, 0);
+    glutSolidSphere(0.5, 32, 32);
+    glDisable(GL_BLEND);
 }
 
 void SpaceHotel::draw(){
@@ -30,15 +40,27 @@ void SpaceHotel::draw(){
         glTranslatef(0, 0, -1);
         glBegin(GL_TRIANGLES);
             for (int i = 0; i <= 32; i++){
+                glColor3f(0.5, 0.5, 0.5);
                 glVertex3f(0.0f, 0.0f, 0.0f);
                 glVertex3f((8 * cos(i*2*PI/32)),
-                           (8 *sin(i*2*PI/32)), 0.0f);
+                           (8 * sin(i*2*PI/32)), 0.0f);
                 glVertex3f((8 * cos((i+1)*2*PI/32)),
-                           (8 *sin((i+1)*2*PI/32)), 0.0f);
+                           (8 * sin((i+1)*2*PI/32)), 0.0f);
+            }
+        glEnd();
+        glColor3f(0.8, 0.8, 0.8);
+        glBegin(GL_TRIANGLES);
+            for (int i = 0; i <= 32; i++){
+                glVertex3f(0.0f, 0.0f, 0.0f);
+                glVertex3f((4 * cos(i*2*PI/32)),
+                            (4 * sin(i*2*PI/32)), 0.0f);
+                glVertex3f((4 * cos((i+1)*2*PI/32)),
+                            (4 * sin((i+1)*2*PI/32)), 0.0f);
             }
         glEnd();
         glTranslatef(0, 0, 2);
         glBegin(GL_TRIANGLES);
+            glColor3f(0.5, 0.5, 0.5);
             for (int i = 0; i <= 32; i++){
                 glVertex3f(0.0f, 0.0f, 0.0f);
                 glVertex3f((8 * cos(i*2*PI/32)),
@@ -47,12 +69,23 @@ void SpaceHotel::draw(){
                            (8 *sin((i+1)*2*PI/32)), 0.0f);
             }
         glEnd();
+        glColor3f(0.8, 0.8, 0.8);
+        glBegin(GL_TRIANGLES);
+            for (int i = 0; i <= 32; i++){
+                glVertex3f(0.0f, 0.0f, 0.0f);
+                glVertex3f((4 * cos(i*2*PI/32)),
+                            (4 * sin(i*2*PI/32)), 0.0f);
+                glVertex3f((4 * cos((i+1)*2*PI/32)),
+                            (4 * sin((i+1)*2*PI/32)), 0.0f);
+            }
+        glEnd();
     glPopMatrix();
     glPushMatrix();
         glTranslatef(0, 8, 0);
         glRotatef(-90, 1, 0, 0);
             gluCylinder(qObj, 1, 1, 2, 32, 32);
     glPopMatrix();
+    glPushMatrix();
     float angle = 90;
         for (int i = 0; i < 4; i++){
             glPushMatrix();
@@ -61,6 +94,27 @@ void SpaceHotel::draw(){
             glRotatef(angle, 0, 0, 1);
             angle += 90;
         }
+    glPopMatrix();
+    glPushMatrix();
+    glTranslatef(0, 0, 1);
+    angle = 360/32.0;
+        for (int i = 0; i < 32; i++){
+            glPushMatrix();
+                drawLightBulb();
+            glPopMatrix();
+            glRotatef(angle, 0, 0, 1);
+            angle += (360/32.0);
+        }
+    glTranslatef(0, 0, -2);
+    angle = 360/32.0;
+        for (int i = 0; i < 32; i++){
+            glPushMatrix();
+                drawLightBulb();
+            glPopMatrix();
+            glRotatef(angle, 0, 0, 1);
+            angle += (360/32.0);
+        }
+    glPopMatrix();
     glEnable(GL_CULL_FACE);
 }
 

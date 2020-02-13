@@ -13,6 +13,7 @@ public:
     SpaceHotel();
     void draw();
     void drawConnector();
+    void drawLightBulb();
 };
 
 class UFO{
