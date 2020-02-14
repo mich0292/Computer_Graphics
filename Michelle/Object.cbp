@@ -14,6 +14,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-g" />
+					<Add directory="include" />
 				</Compiler>
 			</Target>
 			<Target title="Release">
@@ -24,6 +25,7 @@
 				<Option compiler="gcc" />
 				<Compiler>
 					<Add option="-O2" />
+					<Add directory="include" />
 				</Compiler>
 				<Linker>
 					<Add option="-s" />
@@ -44,6 +46,8 @@
 		</Linker>
 		<Unit filename="CGLabmain.cpp" />
 		<Unit filename="CGLabmain.hpp" />
+		<Unit filename="World.cpp" />
+		<Unit filename="World.hpp" />
 		<Unit filename="data/Prometheus.txt" />
 		<Unit filename="data/capsule.txt" />
 		<Unit filename="data/cube.txt" />
@@ -51,18 +55,18 @@
 		<Unit filename="data/monkey.txt" />
 		<Unit filename="data/shuttle.txt" />
 		<Unit filename="data/star.txt" />
-		<Unit filename="include/CGLab01.hpp" />
+		<Unit filename="include/CYModel.hpp" />
+		<Unit filename="include/FJModel.hpp" />
 		<Unit filename="include/Lighting.hpp" />
-		<Unit filename="include/Space.hpp" />
-		<Unit filename="include/World.hpp" />
+		<Unit filename="include/MCModel.hpp" />
+		<Unit filename="include/MyModelLoader.hpp" />
 		<Unit filename="include/rgbLoader.hpp" />
-		<Unit filename="satellite.cpp" />
-		<Unit filename="satellite.hpp" />
-		<Unit filename="src/CGLab01.cpp" />
+		<Unit filename="src/CYModel.cpp" />
+		<Unit filename="src/FJModel.cpp" />
 		<Unit filename="src/Lighting.cpp" />
+		<Unit filename="src/MCModel.cpp" />
+		<Unit filename="src/MyModelLoader.cpp" />
 		<Unit filename="src/Object.cbp" />
-		<Unit filename="src/Space.cpp" />
-		<Unit filename="src/World.cpp" />
 		<Unit filename="src/rgbLoader.cpp" />
 		<Extensions>
 			<code_completion />

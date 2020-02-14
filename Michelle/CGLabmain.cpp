@@ -5,9 +5,9 @@
 #include <GL/glut.h>
 
 #include "CGLabmain.hpp"
-#include "satellite.hpp"
+#include "World.hpp"
 
-using satellite::MyVirtualWorld;
+using World::MyVirtualWorld;
 
 MyVirtualWorld myvirtualworld;
 

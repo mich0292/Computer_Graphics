@@ -251,14 +251,14 @@
 	<GL/glut.h>
 	"model.hpp"
 
-1581613059 source:d:\computergraphics\michelle\cglabmain.cpp
+1581666103 source:d:\computergraphics\michelle\cglabmain.cpp
 	<cstdlib>
 	<iostream>
 	<iomanip>
 	<cmath>
 	<GL/glut.h>
 	"CGLabmain.hpp"
-	"satellite.hpp"
+	"World.hpp"
 
 1581322473 d:\computergraphics\michelle\cglabmain.hpp
 	<string>
@@ -273,19 +273,19 @@
 	<GL/glut.h>
 	"satellite.hpp"
 
-1581663799 d:\computergraphics\michelle\satellite.hpp
+1581665741 d:\computergraphics\michelle\satellite.hpp
 	<GL/glut.h>
 	<GL/glu.h>
 	<stdlib.h>
 	"CGLabmain.hpp"
-	"include/rgbLoader.hpp"
 	"include/MyModelLoader.hpp"
 	"include/Lighting.hpp"
-	"include/World.hpp"
-	"include/Space.hpp"
+	"include/CYModel.hpp"
+	"include/FJModel.hpp"
+	"include/MCModel.hpp"
 
-1581613081 source:d:\computergraphics\michelle\satellite.cpp
-	"satellite.hpp"
+1581666088 source:d:\computergraphics\michelle\satellite.cpp
+	"World.hpp"
 
 1581423704 source:d:\computergraphics\michelle\globe.cpp
 	<GL/glut.h>
@@ -454,7 +454,7 @@
 	<GL/glut.h>
 	"../include/Lighting.hpp"
 
-1581664241 source:d:\computergraphics\michelle\src\rgbloader.cpp
+1581666043 source:d:\computergraphics\michelle\src\rgbloader.cpp
 	<GL/glut.h>
 	<GL/glu.h>
 	<stdlib.h>
@@ -639,4 +639,50 @@
 	<fstream>
 	"../include/MyModelLoader.hpp"
 	<iostream>
+
+1581664900 d:\computergraphics\michelle\include\cymodel.hpp
+
+1581664897 source:d:\computergraphics\michelle\src\cymodel.cpp
+	<GL/glut.h>
+	<cmath>
+	"../include/CYModel.hpp"
+
+1581665159 d:\computergraphics\michelle\include\fjmodel.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1581665179 source:d:\computergraphics\michelle\src\fjmodel.cpp
+	<GL/glut.h>
+	"../include/FJModel.hpp"
+
+1581666048 d:\computergraphics\michelle\include\mcmodel.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<string>
+	<vector>
+	"rgbLoader.hpp"
+	"../CGLabmain.hpp"
+
+1581666053 source:d:\computergraphics\michelle\src\mcmodel.cpp
+	<GL/glut.h>
+	<iostream>
+	<string>
+	<fstream>
+	"../include/MCModel.hpp"
+
+1581666829 d:\computergraphics\michelle\world.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	"CGLabmain.hpp"
+	"include/MyModelLoader.hpp"
+	"include/Lighting.hpp"
+	"include/CYModel.hpp"
+	"include/FJModel.hpp"
+	"include/MCModel.hpp"
+
+1581666796 source:d:\computergraphics\michelle\world.cpp
+	"World.hpp"
 

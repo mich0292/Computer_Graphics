@@ -1,6 +1,6 @@
 #include <GL/glut.h>
-#include "../include/World.hpp"
-using namespace World;
+#include "../include/FJModel.hpp"
+using namespace FJModel;
 
 /******************************************************************************
 *************   	      		  SpaceStation			    	  *************

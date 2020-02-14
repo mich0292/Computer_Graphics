@@ -1,6 +1,9 @@
-#include "satellite.hpp"
-using namespace satellite;
-
+#include <GL/glut.h>
+#include <iostream>
+#include <string>
+#include <fstream>
+#include "../include/MCModel.hpp"
+using namespace MCModel;
 /******************************************************************************
 *************   	      		  Globe					    	  *************
 ******************************************************************************/
@@ -13,8 +16,6 @@ Globe::Globe()
 }
 void Globe::init()
 {
-    // set the GL clear color - use when the color buffer is cleared
-    glClearColor( 0.0f, 0.0f,0.0f, 0 );
     // set the shading model to 'smooth'
     glShadeModel( GL_SMOOTH );
 
@@ -95,8 +96,6 @@ Planet::Planet()
 }
 void Planet::init()
 {
-    // set the GL clear color - use when the color buffer is cleared
-    glClearColor( 0.0f, 0.0f,0.0f, 0 );
     // set the shading model to 'smooth'
     glShadeModel( GL_SMOOTH );
 
@@ -469,149 +468,119 @@ void Satellite::drawCube(float color[3])
     glVertex3f( -0.5, -0.5, -0.5 );
     glEnd();
 }
+
 /******************************************************************************
-*************   	      	 MyVirtualWorld				    	  *************
+*************   	      	 MyModelLoader				    	  *************
 ******************************************************************************/
-void MyVirtualWorld::draw()
+void MyModelLoader::computeSurfaceNormal( GLfloat vertex1[],
+                           GLfloat vertex2[],
+                           GLfloat vertex3[],
+                           GLfloat normal[])
 {
-    ///Satellite
-    glPushMatrix();
-        glTranslatef(60.0f, 25.0f, -15.0f);
-        glRotatef(50, 0.0f, 0.0f, 1.0f);
-        glScalef(0.4f, 0.4f, 0.4f);
-        satellite.draw();
-    glPopMatrix();
-    ///Capsule
-    glPushMatrix();
-        glTranslatef(6.0f, -0.9f, 25.0f);
-        //glRotatef(-5, 0.0f, 0.0f, 1.0f);
-        glRotatef(-90, 1.0f, 0.0f, 0.0f);
-        capsuleloader.draw();
-    glPopMatrix();
-    ///Rocket
-     glPushMatrix();
-        glRotatef(-10, 0.0f, 0.0f, 1.0f);
-        glTranslatef(20.0f, 0.0f, 8.0f);
-        glScalef(0.5f, 0.5f, 0.5f);
-        rocket.draw();
-    glPopMatrix();
-    ///Planet
-    glPushMatrix();
-        glTranslatef(7.0f, -30.0f, 20.0f);
-        glScalef(22.0f, 22.0f, 22.0f);
-        planet.draw();
-    glPopMatrix();
-    ///Globe
-    glPushMatrix();
-        glTranslatef(-60.0f, 20.0f, -50.0f);
-        glScalef(8.0f, 8.f, 8.0f);
-        globe.draw();
-    glPopMatrix();
-    ///Satellite Model
-    glPushMatrix();
-        glTranslatef(-45.0f, 20.0f, -50.0f);
-        satelliteloader.draw(1, 0, 0, 5);
-    glPopMatrix();
-    ///Prometheus
-    glPushMatrix();
-        glTranslatef(35.0f, 40.0f, -35.0f);
-        glRotatef(90, 0.0f, 1.0f, 0.0f);
-        glRotatef(-90, 1.0f, 0.0f, 0.0f);
-        prometheusloader.draw(0, 1, 0, 0, GL_TRUE);
-    glPopMatrix();
-    ///Station
-    glPushMatrix();
-        glTranslatef(-80.0f, -10.0f, 20.0f);
-        glScalef(0.4f, 0.4f, 0.4f);
-        station.draw();
-    glPopMatrix();
-    ///Tyderium (ship)
-    glPushMatrix();
-        glTranslatef(-20.0f, 4.0f, -250.0f);
-        glRotatef(-90, 1.0f, 0.0f, 0.0f);
-        tyderiumloader.draw(0, -1, 0, 0, GL_TRUE);
-    glPopMatrix();
-    ///LIGHTS
-    glPushMatrix();
-        yellowStar.draw();
-    glPopMatrix();
-    glPushMatrix();
-        whiteStar.draw();
-    glPopMatrix();
-    glPushMatrix();
-        point.draw();
-    glPopMatrix();
-
-    ///Hotel
-    glPushMatrix();
-        glTranslatef(20, 20, -20);
-        glRotatef(-45, 1, 0, 0);
-        glScalef(0.5, 0.5, 0.5);
-        hotel.draw();
-    glPopMatrix();
-
-    ///UFO
-    glPushMatrix();
-        glTranslatef(50, 50, 50);
-        glScalef(0.8, 0.8, 0.8);
-        ufo.draw(); //test
-    glPopMatrix();
+    GLfloat v1[3], v2[3];
+    v1[0] = vertex3[0] - vertex2[0];
+    v1[1] = vertex3[1] - vertex2[1];
+    v1[2] = vertex3[2] - vertex2[2];
+    v2[0] = vertex1[0] - vertex2[0];
+    v2[1] = vertex1[1] - vertex2[1];
+    v2[2] = vertex1[2] - vertex2[2];
+    normal[0] = v1[1]*v2[2] - v1[2]*v2[1];
+    normal[1] = v1[2]*v2[0] - v1[0]*v2[2];
+    normal[2] = v1[0]*v2[1] - v1[1]*v2[0];
+    GLfloat magnitude = sqrt(   normal[0]*normal[0]
+                                + normal[1]*normal[1]
+                                + normal[2]*normal[2] );
+    normal[0] /= magnitude;
+    normal[1] /= magnitude;
+    normal[2] /= magnitude;
 }
 
-void MyVirtualWorld::setupLights()
+void MyModelLoader::load(string filename, float scale, float color1, float color2, float color3)
 {
-    glEnable(GL_LIGHTING);
-    //GL_COLOR_MATERIAL
-    // * relevant only if lighting is enabled
-    // * disabled by default
-    // * if enabled, glColor*(...) is in effect to change the color
-    // tracked by glColorMaterial
-    // (meaning that in our case here, glColor*(...) affect
-    // the diffuse color of the frant face)
-    // * if disbled, glMaterial*(...) is in effect to change the color
-    // glColor*(...) will not work!
-    //glColor*(...) always in effect if lighting is not enabled
-    glColorMaterial(GL_FRONT, GL_DIFFUSE);
+    int numberOfVertices;
+    int numberOfFaces;
+    ifstream fin;
+    fin.open(filename.c_str());
+
+    if (fin.good())
+    {
+        fin >> numberOfVertices;
+        fin >> numberOfFaces;
+        int varraysize = numberOfVertices*3;
+        vertices.reserve(varraysize);
+        //Put dummy element for vertices [0],[1],[2]
+        faces.reserve(numberOfFaces*65); //this is just the minimum
+
+        float coord;
+        for (int i=0; i<varraysize && fin.good(); i++)
+        {
+            fin >> coord;
+            vertices.push_back(coord*scale);
+        }
+        int vcount,index;
+        for (int i=0; i<numberOfFaces && fin.good(); ++i)
+        {
+            fin >> vcount;
+            faces.push_back(vcount);
+            for (int j=0; j<vcount && fin.good(); ++j)
+            {
+                fin >> index;
+                faces.push_back(index);
+            }
+        }
+        fin.close();
+    }
+
+    vector<int>::iterator itr;
+    GLfloat normal[3];
+
+    stanforddragon = glGenLists(1);
+    glNewList(stanforddragon, GL_COMPILE);
+    //glColor3f(1.0f, 0.8f, 0.4f);
+    glColor3f(color1, color2, color3);
+    int vcount;  //number of vertices for a particular polygon
+    for (itr = faces.begin(); itr!=faces.end();)
+    {
+        vcount = *itr;  //first element of faces (number of vertices)
+        itr++; //second element of faces (first face)
+        int i1, i2, i3;
+        i1 = (*itr)     * 3; // 24
+        i2 = (*(itr+1)) * 3; // 27
+        i3 = (*(itr+2)) * 3; // 33
+
+        computeSurfaceNormal( &vertices[i1],&vertices[i2],&vertices[i3], normal );
+        glBegin(GL_POLYGON);
+        glNormal3fv(normal);
+        for (int k=0; k<vcount; k++)
+        {
+            glVertex3fv( &vertices[(*itr)*3] );
+            itr++;
+        }
+        glEnd();
+    }
+    glEndList();
+}
+
+void MyModelLoader::draw(float x, float y, float z, float angle, GLboolean movingFlag)
+{
+    glDisable(GL_CULL_FACE);
+        if (angle && g_movement)
+            glRotatef(angle*movement, x, y, z);
+        if ( movingFlag && g_movement)
+            glTranslatef(x*movement, y*movement, z*movement);
+        glCallList(stanforddragon);
+    glEnable(GL_CULL_FACE);
+}
+
+void MyModelLoader::tickTime(long int elapsedTime, float speed){
+    movement = movement + 0.05 + speed;
+}
+
+void MyModelLoader::setupLights(){
+    static GLfloat specref[] = { 1.0f, 1.0f, 1.0f, 1.0f };
+    short shininess = 80;
+
     glEnable(GL_COLOR_MATERIAL);
-    //ensure unit vectors remain unit vectors after
-    // modelview scaling
-    glEnable(GL_NORMALIZE);
-    //define the color of light, i.e. LIGHT0
-    GLfloat mycolor[] = { 0.50, 0.50, 0.50};
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, mycolor);
-
-    //enable the light, i.e. LIGHT0
-    glEnable(GL_LIGHT0);
-    yellowStar.setupLights();
-    whiteStar.setupLights();
-    capsuleloader.setupLights();
-    prometheusloader.setupLights();
-    satelliteloader.setupLights();
-    point.setupLights();
-    for (int i=0; i<7; ++i)
-        lighton[i] = true;
-}
-
-void MyVirtualWorld::toggleLight(int lightno)
-{
-    if (lightno==0)
-    {
-        lighton[0] = !lighton[0];
-        if (lighton[0])
-            glEnable( GL_LIGHT0 );
-        else
-            glDisable( GL_LIGHT0 );
-    }
-    else if (lightno==1)
-    {
-        yellowStar.toggleLight();
-    }
-    else if (lightno==2)
-    {
-        whiteStar.toggleLight();
-    }
-    else if (lightno==3)
-    {
-       point.toggleLight();
-    }
+    glMaterialfv(GL_FRONT, GL_SPECULAR, specref);
+    glMateriali(GL_FRONT, GL_SHININESS, shininess);
 }

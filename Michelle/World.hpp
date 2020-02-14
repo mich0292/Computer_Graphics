@@ -1,108 +1,29 @@
-#ifndef SATELLITE_HPP
-#define SATELLITE_HPP
+#ifndef WORLD_HPP
+#define WORLD_HPP
 
 #include <GL/glut.h>
 #include <GL/glu.h>
 #include <stdlib.h>
 #include "CGLabmain.hpp"
-#include "include/rgbLoader.hpp"
 #include "include/MyModelLoader.hpp"
 #include "include/Lighting.hpp"
-#include "include/World.hpp"
-#include "include/Space.hpp"
+#include "include/CYModel.hpp"
+#include "include/FJModel.hpp"
+#include "include/MCModel.hpp"
 
-namespace satellite
+namespace World
 {
-//using CGLab01::MyModelLoader;
 using Lighting::Point;
 using Lighting::YellowStar;
 using Lighting::WhiteStar;
-using World::Rocket;
-using World::SpaceStation;
-using Space::SpaceHotel;
-using Space::UFO;
-
-class Globe
-{
-public:
-    Globe();
-    ~Globe();
-    void init();
-    void draw();
-    inline void toggleTexture(){ g_texture = !g_texture;}
-    inline void toggleRotation(){ g_rotate = !g_rotate;}
-private:
-    // whether to animate
-    GLboolean g_rotate = GL_TRUE;
-    GLboolean g_texture = GL_TRUE;
-
-    // texture and glu data
-    GLUquadricObj * g_sphere = NULL;
-    GeImageData g_imgData;
-    GLuint g_img = 0;
-
-    GLfloat g_angle_x = 27.0f;
-    GLfloat g_inc = 0.0f;
-    //char g_filename[128] = "data/map.rgb";
-    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/map.rgb";
-
-    // light position
-    GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
-};
-
-class Planet
-{
-public:
-    Planet();
-    ~Planet();
-    void init();
-    void draw();
-    inline void toggleTexture(){ g_texture = !g_texture;}
-    inline void toggleRotation(){ g_rotate = !g_rotate;}
-private:
-    // whether to animate
-    GLboolean g_rotate = GL_TRUE;
-    GLboolean g_texture = GL_TRUE;
-
-    // texture and glu data
-    GLUquadricObj * g_sphere = NULL;
-    GeImageData g_imgData;
-    GLuint g_img = 0;
-
-    GLfloat g_angle_x = 27.0f;
-    GLfloat g_inc = 0.0f;
-    //char g_filename[128] = "data/planet.rgb";
-    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/planet.rgb";
-
-    // light position
-    GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
-};
-
-class Satellite
-{
-public:
-    Satellite();
-    ~Satellite();
-    void draw();
-    void build();
-    void drawWing();
-    void drawWingStem();
-    void drawTop();
-    void drawBottom();
-    void drawBody();
-    void drawTopBody();
-    void drawBottomBody();
-    void drawCube(float color[]);
-    void tickTime(long int elapseTime);
-    inline void toggleRotation(){ g_rotate = !g_rotate;}
-
-private:
-    GLUquadricObj *pObj;
-    GLfloat angle = 0.0f;
-    // whether to animate
-    GLboolean g_rotate = GL_TRUE;
-
-};
+using FJModel::Rocket;
+using FJModel::SpaceStation;
+using CYModel::SpaceHotel;
+using CYModel::UFO;
+using MCModel::Globe;
+using MCModel::Planet;
+using MCModel::Satellite;
+using MCModel::MyModelLoader;
 
 class MyVirtualWorld
 {
@@ -112,6 +33,7 @@ class MyVirtualWorld
     MyModelLoader capsuleloader;
     MyModelLoader satelliteloader;
     MyModelLoader tyderiumloader;
+    MyModelLoader stationloader;
     YellowStar yellowStar;
     WhiteStar whiteStar;
     Globe globe;
@@ -138,6 +60,7 @@ public:
         prometheusloader.tickTime(elapseTime);
         satelliteloader.tickTime(elapseTime);
         tyderiumloader.tickTime(elapseTime, 0.8f);
+        stationloader.tickTime(elapseTime);
     }
 
     void init()
@@ -157,6 +80,7 @@ public:
         //tyderiumloader.load("data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
         //tyderiumloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
         tyderiumloader.load("D:/ComputerGraphics/Michelle/data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
+        stationloader.load("D:/ComputerGraphics/Michelle/data/station.txt", 0.02, 0.560, 0.570, 0.580);
         yellowStar.init();
         whiteStar.init();
         setupLights();
@@ -168,6 +92,7 @@ public:
         prometheusloader.toggleMovement();
         satelliteloader.toggleMovement();
         tyderiumloader.toggleMovement();
+        stationloader.toggleMovement();
         station.toggleRotation();
         satellite.toggleRotation();
     }

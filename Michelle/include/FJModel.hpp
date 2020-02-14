@@ -1,10 +1,10 @@
-#ifndef WORLD_HPP
-#define WORLD_HPP
+#ifndef FJMODEL_HPP
+#define FJMODEL_HPP
 
 #include <GL/glut.h>
 #include <GL/glu.h>
 #include <stdlib.h>
-namespace World{
+namespace FJModel{
 
 class SpaceStation{
 private:
