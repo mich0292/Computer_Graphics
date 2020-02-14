@@ -42,8 +42,6 @@ bool ge_read_image( const char * filename, GeImageData * pImgData )
 }
 
 
-
-
 //-----------------------------------------------------------------------------
 /* texture loading - by David Blythe, SGI */
 /* a simplistic routine for reading an SGI .rgb image file. */

@@ -2,10 +2,9 @@
 #define LIGHTING_HPP
 #include <cmath>
 #include "../CGLabmain.hpp"
-#include "CGLab01.hpp"
+#include "MyModelLoader.hpp"
 namespace Lighting
 {
-using CGLab01::MyModelLoader;
 class Point{
 public:
     void draw();

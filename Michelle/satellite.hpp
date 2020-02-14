@@ -6,14 +6,14 @@
 #include <stdlib.h>
 #include "CGLabmain.hpp"
 #include "include/rgbLoader.hpp"
-#include "include/CGLab01.hpp"
+#include "include/MyModelLoader.hpp"
 #include "include/Lighting.hpp"
 #include "include/World.hpp"
 #include "include/Space.hpp"
 
 namespace satellite
 {
-using CGLab01::MyModelLoader;
+//using CGLab01::MyModelLoader;
 using Lighting::Point;
 using Lighting::YellowStar;
 using Lighting::WhiteStar;
@@ -44,7 +44,7 @@ private:
     GLfloat g_angle_x = 27.0f;
     GLfloat g_inc = 0.0f;
     //char g_filename[128] = "data/map.rgb";
-    char g_filename[128] = "C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/map.rgb";
+    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/map.rgb";
 
     // light position
     GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
@@ -72,7 +72,7 @@ private:
     GLfloat g_angle_x = 27.0f;
     GLfloat g_inc = 0.0f;
     //char g_filename[128] = "data/planet.rgb";
-    char g_filename[128] = "C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/planet.rgb";
+    char g_filename[128] = "D:/ComputerGraphics/Michelle/data/planet.rgb";
 
     // light position
     GLfloat g_light_position[4] = { 2.0f, 1.2f, 4.0f, 1.0f };
@@ -145,15 +145,18 @@ public:
         timeold = glutGet(GLUT_ELAPSED_TIME);
         globe.init();
         planet.init();
-        prometheusloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/Prometheus.txt", 2 );
+        //prometheusloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/Prometheus.txt", 2 );
+        prometheusloader.load("D:/ComputerGraphics/Michelle/data/Prometheus.txt", 2);
         //prometheusloader.load("/data/Prometheus.txt", 3 );
-        capsuleloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
+        //capsuleloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
+        capsuleloader.load("D:/ComputerGraphics/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
         //capsuleloader.load("data/capsule.txt", 0.02, 0.560, 0.570, 0.580);
-        capsuleloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/capsule.txt", 0.02, 0.560, 0.570, 0.580);
         //satelliteloader.load("data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
-        satelliteloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
+        //satelliteloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
+        satelliteloader.load("D:/ComputerGraphics/Michelle/data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
         //tyderiumloader.load("data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
-        tyderiumloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
+        //tyderiumloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
+        tyderiumloader.load("D:/ComputerGraphics/Michelle/data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
         yellowStar.init();
         whiteStar.init();
         setupLights();

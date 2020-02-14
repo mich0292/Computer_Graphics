@@ -1,13 +1,3 @@
-/*
-CGLab11and12.cpp
-Objective: Lab11 on Lighting &
-Lab12 on Textures
-INSTRUCTIONS
-============
-* Please refer to CGLabmain.cpp for instructions
-CHANGE LOG
-==========
-*/
 #include <GL/glut.h>
 
 #include "../include/Lighting.hpp"

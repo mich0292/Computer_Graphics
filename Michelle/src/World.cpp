@@ -2,6 +2,9 @@
 #include "../include/World.hpp"
 using namespace World;
 
+/******************************************************************************
+*************   	      		  SpaceStation			    	  *************
+******************************************************************************/
 SpaceStation::SpaceStation(){
     pObj = gluNewQuadric();
     gluQuadricNormals(pObj,GLU_SMOOTH);
@@ -306,6 +309,9 @@ void SpaceStation::tickTime(long int elapsedTime){
         angle = 0.0;
 }
 
+/******************************************************************************
+*************   	        		  Rocket		 	    	  *************
+******************************************************************************/
 Rocket::Rocket(){
     pObj = gluNewQuadric();
     gluQuadricNormals(pObj,GLU_SMOOTH);

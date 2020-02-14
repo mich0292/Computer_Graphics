@@ -1,11 +1,8 @@
-#ifndef CGLAB01_HPP
-#define CGLAB01_HPP
-
+#ifndef MYMODELLOADER_HPP
+#define MYMODELLOADER_HPP
 #include "../CGLabmain.hpp"
 #include <string>
 #include <vector>
-
-namespace CGLab01 {
 
 class MyModelLoader
 {
@@ -22,6 +19,7 @@ class MyModelLoader
     void tickTime(long int elapseTime, float speed = 0.0f);
     void setupLights();
     inline void toggleMovement(){ g_movement = !g_movement;}
+    void computeSurfaceNormal(GLfloat vertex1[], GLfloat vertex2[], GLfloat vertex3[], GLfloat normal[]);
  private:
     vector<GLfloat> vertices;
     vector<int> faces;
@@ -29,7 +27,5 @@ class MyModelLoader
     GLfloat movement;
     GLboolean g_movement = GL_TRUE;
 };
-
-}; //end of namespace CGLab01
 
 #endif //CGLAB01_HPP

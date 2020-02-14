@@ -1,11 +1,10 @@
 #include <GL/glut.h>
 #include <string>
 #include <fstream>
-#include "../include/CGLab01.hpp"
+#include "../include/MyModelLoader.hpp"
 #include <iostream>
-using namespace CGLab01;
 
-void computeSurfaceNormal( GLfloat vertex1[],
+void MyModelLoader::computeSurfaceNormal( GLfloat vertex1[],
                            GLfloat vertex2[],
                            GLfloat vertex3[],
                            GLfloat normal[])

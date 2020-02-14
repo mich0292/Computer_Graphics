@@ -261,31 +261,6 @@ void myViewingInit()
               viewer.centerX,viewer.centerY,viewer.centerZ,
               viewer.upX,    viewer.upY,    viewer.upZ );
 }
-/*
-void myLightingInit()
-{
-    static GLfloat  ambient[] = { 0.0f,  0.0f,  0.0f, 1.0f };
-    static GLfloat  diffuse[] = { 1.0f,  1.0f,  1.0f, 1.0f };
-    static GLfloat specular[] = { 1.0f,  1.0f,  1.0f, 1.0f };
-    static GLfloat  specref[] = { 1.0f,  1.0f,  1.0f, 1.0f };
-    static GLfloat position[] = {10.0f, 10.0f, 10.0f, 1.0f };
-    short shininess = 128;
-
-    glDisable(GL_LIGHTING);
-    glLightfv(GL_LIGHT0, GL_AMBIENT, ambient);
-    glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
-    glLightfv(GL_LIGHT0, GL_SPECULAR, specular);
-    glLightfv(GL_LIGHT0, GL_POSITION, position);
-    glEnable(GL_LIGHT0);
-
-    glColorMaterial(GL_FRONT, GL_AMBIENT_AND_DIFFUSE);
-    glEnable(GL_COLOR_MATERIAL);
-
-    glMaterialfv(GL_FRONT, GL_SPECULAR, specref);
-    glMateriali(GL_FRONT, GL_SHININESS, shininess);
-
-    glEnable(GL_NORMALIZE);
-}*/
 
 void myInit()
 {

@@ -251,7 +251,7 @@
 	<GL/glut.h>
 	"model.hpp"
 
-1581582033 source:d:\computergraphics\michelle\cglabmain.cpp
+1581613059 source:d:\computergraphics\michelle\cglabmain.cpp
 	<cstdlib>
 	<iostream>
 	<iomanip>
@@ -273,17 +273,18 @@
 	<GL/glut.h>
 	"satellite.hpp"
 
-1581582812 d:\computergraphics\michelle\satellite.hpp
+1581663799 d:\computergraphics\michelle\satellite.hpp
 	<GL/glut.h>
 	<GL/glu.h>
 	<stdlib.h>
 	"CGLabmain.hpp"
 	"include/rgbLoader.hpp"
-	"include/CGLab01.hpp"
+	"include/MyModelLoader.hpp"
 	"include/Lighting.hpp"
 	"include/World.hpp"
+	"include/Space.hpp"
 
-1581583525 source:d:\computergraphics\michelle\satellite.cpp
+1581613081 source:d:\computergraphics\michelle\satellite.cpp
 	"satellite.hpp"
 
 1581423704 source:d:\computergraphics\michelle\globe.cpp
@@ -432,28 +433,28 @@
 
 1581456534 d:\computergraphics\michelle\include\rgbloader.hpp
 
-1581582759 d:\computergraphics\michelle\include\cglab01.hpp
+1581612995 d:\computergraphics\michelle\include\cglab01.hpp
 	"../CGLabmain.hpp"
 	<string>
 	<vector>
 
-1581582321 d:\computergraphics\michelle\include\lighting.hpp
+1581663954 d:\computergraphics\michelle\include\lighting.hpp
 	<cmath>
 	"../CGLabmain.hpp"
-	"CGLab01.hpp"
+	"MyModelLoader.hpp"
 
-1581582766 source:d:\computergraphics\michelle\src\cglab01.cpp
+1581613003 source:d:\computergraphics\michelle\src\cglab01.cpp
 	<GL/glut.h>
 	<string>
 	<fstream>
 	"../include/CGLab01.hpp"
 	<iostream>
 
-1581582577 source:d:\computergraphics\michelle\src\lighting.cpp
+1581613016 source:d:\computergraphics\michelle\src\lighting.cpp
 	<GL/glut.h>
 	"../include/Lighting.hpp"
 
-1581498012 source:d:\computergraphics\michelle\src\rgbloader.cpp
+1581664241 source:d:\computergraphics\michelle\src\rgbloader.cpp
 	<GL/glut.h>
 	<GL/glu.h>
 	<stdlib.h>
@@ -533,12 +534,12 @@
 	<GL/glut.h>
 	"../include/World.hpp"
 
-1581580224 d:\computergraphics\michelle\include\world.hpp
+1581664260 d:\computergraphics\michelle\include\world.hpp
 	<GL/glut.h>
 	<GL/glu.h>
 	<stdlib.h>
 
-1581582867 source:d:\computergraphics\michelle\src\world.cpp
+1581664139 source:d:\computergraphics\michelle\src\world.cpp
 	<GL/glut.h>
 	"../include/World.hpp"
 
@@ -619,4 +620,23 @@
 	<GL/glut.h>
 	<cmath>
 	"../include/Space.hpp"
+
+1581612894 d:\computergraphics\michelle\include\space.hpp
+
+1581612894 source:d:\computergraphics\michelle\src\space.cpp
+	<GL/glut.h>
+	<cmath>
+	"../include/Space.hpp"
+
+1581663916 d:\computergraphics\michelle\include\mymodelloader.hpp
+	"../CGLabmain.hpp"
+	<string>
+	<vector>
+
+1581663900 source:d:\computergraphics\michelle\src\mymodelloader.cpp
+	<GL/glut.h>
+	<string>
+	<fstream>
+	"../include/MyModelLoader.hpp"
+	<iostream>
 

@@ -1,8 +1,6 @@
 #include "satellite.hpp"
 using namespace satellite;
 
-
-
 /******************************************************************************
 *************   	      		  Globe					    	  *************
 ******************************************************************************/
@@ -540,9 +538,8 @@ void MyVirtualWorld::draw()
     glPushMatrix();
         whiteStar.draw();
     glPopMatrix();
-
     glPushMatrix();
-    point.draw();
+        point.draw();
     glPopMatrix();
 
     ///Hotel
@@ -556,7 +553,7 @@ void MyVirtualWorld::draw()
     ///UFO
     glPushMatrix();
         glTranslatef(50, 50, 50);
-        glScalef(0.5, 0.5, 0.5);
+        glScalef(0.8, 0.8, 0.8);
         ufo.draw();
     glPopMatrix();
 }
