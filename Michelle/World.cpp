@@ -91,9 +91,9 @@ void MyVirtualWorld::draw()
 
     ///UFO
     glPushMatrix();
-        glTranslatef(50, 50, 50);
-        glScalef(0.8, 0.8, 0.8);
-        ufo.draw(); //test
+        glTranslatef(50, -6, 50);
+        glScalef(0.4, 0.4, 0.4);
+        ufo.draw();
     glPopMatrix();
 }
 

@@ -61,6 +61,8 @@ public:
         satelliteloader.tickTime(elapseTime);
         tyderiumloader.tickTime(elapseTime, 0.8f);
         stationloader.tickTime(elapseTime);
+        ufo.tickTime(elapseTime);
+        hotel.tickTime(elapseTime);
     }
 
     void init()
