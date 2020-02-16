@@ -312,7 +312,7 @@ void myWelcome()
     cout << "|   F4                      => toggle obj lighting on / off     |\n";
     cout << "|   F5                      => toggle star(y) lighting on / off |\n";
     cout << "|   F6                      => toggle star(w) lighting on / off |\n";
-    cout << "|   F7                      => toggle lighting on / off         |\n";
+    cout << "|   F7                      => toggle points lighting on / off  |\n";
     cout << "|   F11                     => toggle animation on / off        |\n";
     cout << "|   F12                     => toggle texture on / off          |\n";
     cout << "|                                                               |\n";
