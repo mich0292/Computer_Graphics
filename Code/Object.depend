@@ -769,3 +769,97 @@
 1581667363 source:d:\computergraphics\code\world.cpp
 	"World.hpp"
 
+1581835782 source:c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\src\cymodel.cpp
+	<GL/glut.h>
+	<cmath>
+	"../include/CYModel.hpp"
+
+1581834614 c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\include\cymodel.hpp
+
+1581835795 source:c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\src\lighting.cpp
+	<GL/glut.h>
+	"../include/Lighting.hpp"
+
+1581834614 c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\include\lighting.hpp
+	<cmath>
+	"../CGLabmain.hpp"
+	"MyModelLoader.hpp"
+
+1581834614 c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\cglabmain.hpp
+	<string>
+	<cmath>
+	<iostream>
+	<GL/glut.h>
+
+1581834614 c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\include\mymodelloader.hpp
+	"../CGLabmain.hpp"
+	<string>
+	<vector>
+
+1581835836 source:c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\src\mcmodel.cpp
+	<GL/glut.h>
+	<iostream>
+	<string>
+	<fstream>
+	"../include/MCModel.hpp"
+
+1581834614 c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\include\mcmodel.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<string>
+	<vector>
+	"rgbLoader.hpp"
+	"../CGLabmain.hpp"
+
+1581834614 c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\include\rgbloader.hpp
+
+1581835850 source:c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\src\mymodelloader.cpp
+	<GL/glut.h>
+	<string>
+	<fstream>
+	"../include/MyModelLoader.hpp"
+	<iostream>
+
+1581834615 source:c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\src\rgbloader.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+	"../include/rgbLoader.hpp"
+
+1581834614 source:c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\world.cpp
+	"World.hpp"
+
+1581834904 c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\world.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	"CGLabmain.hpp"
+	"include/MyModelLoader.hpp"
+	"include/Lighting.hpp"
+	"include/CYModel.hpp"
+	"include/FJModel.hpp"
+	"include/MCModel.hpp"
+
+1581834614 c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\include\fjmodel.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1581835708 source:c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\cglabmain.cpp
+	<cstdlib>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<GL/glut.h>
+	"CGLabmain.hpp"
+	"World.hpp"
+
+1581835460 source:c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\src\fjmodel.cpp
+	<GL/glut.h>
+	"../include/FJModel.hpp"
+
