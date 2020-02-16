@@ -43,5 +43,5 @@ private:
     long int timestart;
     GLboolean lighton; //keep track if lights are on or off
 };
-}; //end of namespace CGLab12and13
+}; //end of namespace
 #endif

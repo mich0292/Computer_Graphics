@@ -47,9 +47,7 @@ void Point::toggleLight()
 ******************************************************************************/
 
 void YellowStar::init(){
-    //starLoader.load("data/star.txt", 0.05);
-    starLoader.load("D:/ComputerGraphics/Michelle/data/star.txt", 0.05);
-
+    starLoader.load("data/star.txt", 0.05);
 }
 void YellowStar::setupLights()
 {
@@ -63,9 +61,6 @@ void YellowStar::setupLights()
     lighton = GL_TRUE;
 }
 
-//light 0 is a directional light
-//lights 1,2,3 are lights 0,1,2 of spotlights
-//lights 4,5 are lights 0,1 of swinglights
 void YellowStar::toggleLight()
 {
     lighton= !lighton;
@@ -99,8 +94,7 @@ void YellowStar::draw()
 *************   	      		  WhiteStar				     	  *************
 ******************************************************************************/
 void WhiteStar::init(){
-    //starLoader.load("data/star.txt", 0.05);
-    starLoader.load("D:/ComputerGraphics/Michelle/data/star.txt", 0.05);
+    starLoader.load("data/star.txt", 0.05);
 }
 void WhiteStar::setupLights()
 {
@@ -114,9 +108,6 @@ void WhiteStar::setupLights()
     lighton = GL_TRUE;
 }
 
-//light 0 is a directional light
-//lights 1,2,3 are lights 0,1,2 of spotlights
-//lights 4,5 are lights 0,1 of swinglights
 void WhiteStar::toggleLight()
 {
     lighton= !lighton;

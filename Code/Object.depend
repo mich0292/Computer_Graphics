@@ -686,3 +686,86 @@
 1581667363 source:d:\computergraphics\michelle\world.cpp
 	"World.hpp"
 
+1581666103 source:d:\computergraphics\code\cglabmain.cpp
+	<cstdlib>
+	<iostream>
+	<iomanip>
+	<cmath>
+	<GL/glut.h>
+	"CGLabmain.hpp"
+	"World.hpp"
+
+1581322473 d:\computergraphics\code\cglabmain.hpp
+	<string>
+	<cmath>
+	<iostream>
+	<GL/glut.h>
+
+1581833623 d:\computergraphics\code\world.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	"CGLabmain.hpp"
+	"include/MyModelLoader.hpp"
+	"include/Lighting.hpp"
+	"include/CYModel.hpp"
+	"include/FJModel.hpp"
+	"include/MCModel.hpp"
+
+1581663916 d:\computergraphics\code\include\mymodelloader.hpp
+	"../CGLabmain.hpp"
+	<string>
+	<vector>
+
+1581834352 d:\computergraphics\code\include\lighting.hpp
+	<cmath>
+	"../CGLabmain.hpp"
+	"MyModelLoader.hpp"
+
+1581664900 d:\computergraphics\code\include\cymodel.hpp
+
+1581665159 d:\computergraphics\code\include\fjmodel.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+
+1581833545 d:\computergraphics\code\include\mcmodel.hpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<string>
+	<vector>
+	"rgbLoader.hpp"
+	"../CGLabmain.hpp"
+
+1581456534 d:\computergraphics\code\include\rgbloader.hpp
+
+1581664897 source:d:\computergraphics\code\src\cymodel.cpp
+	<GL/glut.h>
+	<cmath>
+	"../include/CYModel.hpp"
+
+1581665179 source:d:\computergraphics\code\src\fjmodel.cpp
+	<GL/glut.h>
+	"../include/FJModel.hpp"
+
+1581663900 source:d:\computergraphics\code\src\mymodelloader.cpp
+	<GL/glut.h>
+	<string>
+	<fstream>
+	"../include/MyModelLoader.hpp"
+	<iostream>
+
+1581666043 source:d:\computergraphics\code\src\rgbloader.cpp
+	<GL/glut.h>
+	<GL/glu.h>
+	<stdlib.h>
+	<memory.h>
+	<math.h>
+	<stdio.h>
+	<string.h>
+	"../include/rgbLoader.hpp"
+
+1581667363 source:d:\computergraphics\code\world.cpp
+	"World.hpp"
+

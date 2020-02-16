@@ -508,7 +508,6 @@ void MyModelLoader::load(string filename, float scale, float color1, float color
         fin >> numberOfFaces;
         int varraysize = numberOfVertices*3;
         vertices.reserve(varraysize);
-        //Put dummy element for vertices [0],[1],[2]
         faces.reserve(numberOfFaces*65); //this is just the minimum
 
         float coord;

@@ -70,19 +70,11 @@ public:
         timeold = glutGet(GLUT_ELAPSED_TIME);
         globe.init();
         planet.init();
-        //prometheusloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/Prometheus.txt", 2 );
-        prometheusloader.load("D:/ComputerGraphics/Michelle/data/Prometheus.txt", 2);
-        //prometheusloader.load("/data/Prometheus.txt", 3 );
-        //capsuleloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
-        capsuleloader.load("D:/ComputerGraphics/Michelle/data/capsule.txt", 0.02, 0.75, 0.75, 0.75);
-        //capsuleloader.load("data/capsule.txt", 0.02, 0.560, 0.570, 0.580);
-        //satelliteloader.load("data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
-        //satelliteloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
-        satelliteloader.load("D:/ComputerGraphics/Michelle/data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
-        //tyderiumloader.load("data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
-        //tyderiumloader.load("C:/Users/User/Documents/GitHub/ComputerGraphics/Michelle/data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
-        tyderiumloader.load("D:/ComputerGraphics/Michelle/data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
-        stationloader.load("D:/ComputerGraphics/Michelle/data/station.txt", 0.02, 0.560, 0.570, 0.580);
+        prometheusloader.load("data/Prometheus.txt", 3 );
+        capsuleloader.load("data/capsule.txt", 0.02, 0.560, 0.570, 0.580);
+        satelliteloader.load("data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
+        tyderiumloader.load("data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
+        stationloader.load("data/station.txt", 0.02, 0.560, 0.570, 0.580);
         yellowStar.init();
         whiteStar.init();
         setupLights();
@@ -97,6 +89,8 @@ public:
         stationloader.toggleMovement();
         station.toggleRotation();
         satellite.toggleRotation();
+        ufo.toggleMovement();
+        hotel.toggleMovement();
     }
 
     void toggleTexture(){

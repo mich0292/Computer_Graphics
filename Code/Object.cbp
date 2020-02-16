@@ -52,8 +52,6 @@
 		<Unit filename="data/capsule.txt" />
 		<Unit filename="data/cube.txt" />
 		<Unit filename="data/map.rgb" />
-		<Unit filename="data/monkey.txt" />
-		<Unit filename="data/shuttle.txt" />
 		<Unit filename="data/star.txt" />
 		<Unit filename="include/CYModel.hpp" />
 		<Unit filename="include/FJModel.hpp" />
