@@ -1,6 +1,7 @@
 #ifndef MYMODELLOADER_HPP
 #define MYMODELLOADER_HPP
 #include "../CGLabmain.hpp"
+#include "rgbLoader.hpp"
 #include <string>
 #include <vector>
 

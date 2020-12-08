@@ -686,7 +686,7 @@
 1581667363 source:d:\computergraphics\michelle\world.cpp
 	"World.hpp"
 
-1581666103 source:d:\computergraphics\code\cglabmain.cpp
+1586071781 source:d:\computergraphics\code\cglabmain.cpp
 	<cstdlib>
 	<iostream>
 	<iomanip>
@@ -701,19 +701,16 @@
 	<iostream>
 	<GL/glut.h>
 
-1581833623 d:\computergraphics\code\world.hpp
+1586073300 d:\computergraphics\code\world.hpp
 	<GL/glut.h>
 	<GL/glu.h>
 	<stdlib.h>
 	"CGLabmain.hpp"
 	"include/MyModelLoader.hpp"
-	"include/Lighting.hpp"
-	"include/CYModel.hpp"
-	"include/FJModel.hpp"
-	"include/MCModel.hpp"
 
-1581663916 d:\computergraphics\code\include\mymodelloader.hpp
+1586072237 d:\computergraphics\code\include\mymodelloader.hpp
 	"../CGLabmain.hpp"
+	"rgbLoader.hpp"
 	<string>
 	<vector>
 
@@ -766,7 +763,7 @@
 	<string.h>
 	"../include/rgbLoader.hpp"
 
-1581667363 source:d:\computergraphics\code\world.cpp
+1586073273 source:d:\computergraphics\code\world.cpp
 	"World.hpp"
 
 1581835782 source:c:\users\asus\google drive (foofangjee@gmail.com)\semester 2\tgd2151\assignment\github\computergraphics\code\src\cymodel.cpp

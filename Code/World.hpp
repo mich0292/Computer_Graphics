@@ -6,45 +6,17 @@
 #include <stdlib.h>
 #include "CGLabmain.hpp"
 #include "include/MyModelLoader.hpp"
-#include "include/Lighting.hpp"
-#include "include/CYModel.hpp"
-#include "include/FJModel.hpp"
-#include "include/MCModel.hpp"
 
 namespace World
 {
-using Lighting::Point;
-using Lighting::YellowStar;
-using Lighting::WhiteStar;
-using FJModel::Rocket;
-using FJModel::SpaceStation;
-using CYModel::SpaceHotel;
-using CYModel::UFO;
-using MCModel::Globe;
-using MCModel::Planet;
-using MCModel::Satellite;
-using MCModel::MyModelLoader;
 
 class MyVirtualWorld
 {
     long int timeold, timenew, elapseTime;
-    Satellite satellite;
-    MyModelLoader prometheusloader;
-    MyModelLoader capsuleloader;
-    MyModelLoader satelliteloader;
-    MyModelLoader tyderiumloader;
-    MyModelLoader stationloader;
-    YellowStar yellowStar;
-    WhiteStar whiteStar;
-    Globe globe;
-    Planet planet;
-    Rocket rocket;
-    SpaceStation station;
-    SpaceHotel hotel;
-    UFO ufo;
-    Point point;
-
+    ///MyModelLoader prometheusloader;
+    MyModelLoader spaceshiploader;
     bool lighton[7]; //keep track if lights are on or off
+
 public:
     void draw();
     void setupLights();
@@ -55,47 +27,23 @@ public:
         timenew = glutGet(GLUT_ELAPSED_TIME);
         elapseTime = timenew - timeold;
         timeold = timenew;
-        satellite.tickTime(elapseTime);
-        station.tickTime(elapseTime);
-        prometheusloader.tickTime(elapseTime);
-        satelliteloader.tickTime(elapseTime);
-        tyderiumloader.tickTime(elapseTime, 0.8f);
-        stationloader.tickTime(elapseTime);
-        ufo.tickTime(elapseTime);
-        hotel.tickTime(elapseTime);
+        ///prometheusloader.tickTime(elapseTime);
     }
 
     void init()
     {
         timeold = glutGet(GLUT_ELAPSED_TIME);
-        globe.init();
-        planet.init();
-        prometheusloader.load("data/Prometheus.txt", 3 );
-        capsuleloader.load("data/capsule.txt", 0.02, 0.560, 0.570, 0.580);
-        satelliteloader.load("data/satelliteModel.txt", 0.4, 0.955, 0.637, 0.538);
-        tyderiumloader.load("data/tyderium.txt",0.01, 0.314, 0.784, 0.471);
-        stationloader.load("data/station.txt", 0.02, 0.560, 0.570, 0.580);
-        yellowStar.init();
-        whiteStar.init();
+        ///prometheusloader.load("D:/ComputerGraphics/Code/data/Prometheus.txt", 3 );
+        spaceshiploader.load("D:/ComputerGraphics/Code/data/spaceship.txt", 2);
+        //It could be "data/Pometheus.txt" or the full path
         setupLights();
     }
 
     void toggleAnimation(){
-        planet.toggleRotation();
-        globe.toggleRotation();
-        prometheusloader.toggleMovement();
-        satelliteloader.toggleMovement();
-        tyderiumloader.toggleMovement();
-        stationloader.toggleMovement();
-        station.toggleRotation();
-        satellite.toggleRotation();
-        ufo.toggleMovement();
-        hotel.toggleMovement();
+        ///prometheusloader.toggleMovement();
     }
 
     void toggleTexture(){
-        planet.toggleTexture();
-        globe.toggleTexture();
     }
 };
 

@@ -129,24 +129,6 @@ void mySpecialFunc(int key, int x, int y)
                                 else
                                     glEnable(GL_LIGHTING);
                                 break;
-        case GLUT_KEY_F4    :
-                                myvirtualworld.toggleLight(0);
-                                break;
-        case GLUT_KEY_F5    :
-                                myvirtualworld.toggleLight(1);
-                                break;
-        case GLUT_KEY_F6    :
-                                myvirtualworld.toggleLight(2);
-                                break;
-        case GLUT_KEY_F7    :
-                                myvirtualworld.toggleLight(3);
-                                break;
-        case GLUT_KEY_F11    :
-                                myvirtualworld.toggleAnimation();
-                                break;
-        case GLUT_KEY_F12    :
-                                myvirtualworld.toggleTexture();
-                                break;
     }
     glutPostRedisplay();
 }
@@ -309,12 +291,6 @@ void myWelcome()
     cout << "|   F1                      => toggle shading / wire-frame mode |\n";
     cout << "|   F2                      => toggle rendering of axes         |\n";
     cout << "|   F3                      => toggle lighting on / off         |\n";
-    cout << "|   F4                      => toggle obj lighting on / off     |\n";
-    cout << "|   F5                      => toggle star(y) lighting on / off |\n";
-    cout << "|   F6                      => toggle star(w) lighting on / off |\n";
-    cout << "|   F7                      => toggle points lighting on / off  |\n";
-    cout << "|   F11                     => toggle animation on / off        |\n";
-    cout << "|   F12                     => toggle texture on / off          |\n";
     cout << "|                                                               |\n";
     cout << "| Mouse (Left Drag or Right Drag) => rotate world               |\n";
     cout << "|                                                               |\n";

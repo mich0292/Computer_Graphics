@@ -53,16 +53,8 @@
 		<Unit filename="data/cube.txt" />
 		<Unit filename="data/map.rgb" />
 		<Unit filename="data/star.txt" />
-		<Unit filename="include/CYModel.hpp" />
-		<Unit filename="include/FJModel.hpp" />
-		<Unit filename="include/Lighting.hpp" />
-		<Unit filename="include/MCModel.hpp" />
 		<Unit filename="include/MyModelLoader.hpp" />
 		<Unit filename="include/rgbLoader.hpp" />
-		<Unit filename="src/CYModel.cpp" />
-		<Unit filename="src/FJModel.cpp" />
-		<Unit filename="src/Lighting.cpp" />
-		<Unit filename="src/MCModel.cpp" />
 		<Unit filename="src/MyModelLoader.cpp" />
 		<Unit filename="src/Object.cbp" />
 		<Unit filename="src/rgbLoader.cpp" />
