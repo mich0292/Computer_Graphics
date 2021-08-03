@@ -12,18 +12,18 @@ The concepts we used include building models, simple animations (rotation, movin
 
 ***Controls***
 
-**Keyboard**
+⌨️**Keyboard**⌨️
      Keys	        |        In-game action
 ----------------- | -----------------------------
 A, S, D, F, Q, E	 |   Move around in the world
   →, ↓,	←, ↑      |   Change the camera angle
  
- **Mouse**
+ 🖱️**Mouse**🖱️
      Keys	          |        In-game action
 ------------------- | -----------------------------
 Drag left or right	 |   Rotate the world
  
- **Special Functions**
+ ⌨️**Special Functions**⌨️
   Keys	 |   In-game action
 ------- | ------------------------------
   Home	 |   Counter-clockwise turn
