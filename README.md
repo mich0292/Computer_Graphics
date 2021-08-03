@@ -1,7 +1,7 @@
 # ComputerGraphics 🌌🚀🪐🌎🛸🛰️
  
- <img src="https://github.com/mich0292/Computer_Graphics/blob/6dc98b255fbd8005f309af39bd7708316c5c7ac3/Screenshots/ComputerGraphics.png" alt="Picture of a 3D World (OpenGL" width="100" height="100">
- ![Picture of a 3D World (OpenGL](https://github.com/mich0292/Computer_Graphics/blob/6dc98b255fbd8005f309af39bd7708316c5c7ac3/Screenshots/ComputerGraphics.png)
+ <img src="https://github.com/mich0292/Computer_Graphics/blob/6dc98b255fbd8005f309af39bd7708316c5c7ac3/Screenshots/ComputerGraphics.png" alt="Picture of a 3D World (OpenGL" width="80%" height="80%">
+ 
 *Note: This game uses OpenGL.*
 
 For this assignment, we developed an imaginative 3D World in Outer Space using the concepts we learned in Computer Graphics.\
