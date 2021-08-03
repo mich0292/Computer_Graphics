@@ -3,11 +3,12 @@
 *Note: This game uses OpenGL.*
 
 For this assignment, we developed an imaginative 3D World in Outer Space using the concepts we learned in Computer Graphics.\
-The concepts we used include building models, simple animations (rotation, moving along certain axis), and rendering effects such as lighting, shading, and texturing.\
+The concepts we used include building models, simple animations (rotation, moving along certain axis), and rendering effects such as lighting, shading, and texturing.
 
 **There are two types of models:**
 1. OpenGL Primitives (Quadrics objects, polygon) 
 2. Loaded Model (obj files)
+*Most of the obj models are obtained from free3d.com*
 
 ***Controls***
 **Keyboard**
