@@ -17,7 +17,7 @@ The UFO moves from behind the planet until it sits on top of this planet.
 
 *Most of the obj models are obtained from free3d.com*
 
-##Controls
+## Controls
 
 🖱️**Mouse**🖱️
      Keys	          |        In-game action
