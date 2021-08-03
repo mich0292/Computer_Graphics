@@ -1,5 +1,6 @@
 # ComputerGraphics 🌌🚀🪐🌎🛸🛰️
  
+ ![Picture of a 3D World (OpenGL](https://github.com/mich0292/Computer_Graphics/blob/6dc98b255fbd8005f309af39bd7708316c5c7ac3/Screenshots/ComputerGraphics.png)
 *Note: This game uses OpenGL.*
 
 For this assignment, we developed an imaginative 3D World in Outer Space using the concepts we learned in Computer Graphics.\
@@ -23,7 +24,7 @@ Drag left or right	 |   Rotate the world
 A, S, D, F, Q, E	 |   Move around in the world
   →, ↓,	←, ↑      |   Change the camera angle
   
- ⌨**Special Functions**
+ **Special Functions**
   Keys	 |   In-game action
 ------- | ------------------------------
   Home	 |   Counter-clockwise turn
